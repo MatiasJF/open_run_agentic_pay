@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2E2EFF;
+  --color-primary-dark: #1A1A99;
+  --color-accent: #00D4FF;
+  --color-accent-warm: #FFB800;
+  --color-dark-bg: #0A0A1A;
+  --color-card-bg: #1E1E2E;
+  --color-muted: #94A3B8;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-dark-bg);
+  color: #ffffff;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-dark-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-card-bg);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted);
+}
+
+/* Animated gradient for hero */
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* Glow effect */
+.glow-primary {
+  box-shadow: 0 0 20px rgba(46, 46, 255, 0.3), 0 0 60px rgba(46, 46, 255, 0.1);
+}
+
+.glow-accent {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3), 0 0 60px rgba(0, 212, 255, 0.1);
+}
+
+/* Section padding */
+.section-padding {
+  @apply px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24;
+}
+
+/* Glass card */
+.glass-card {
+  background: rgba(30, 30, 46, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}

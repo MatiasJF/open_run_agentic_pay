@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" fill="none">
+  <!-- Left node (agent) -->
+  <circle cx="22" cy="25" r="8" fill="#2E2EFF" opacity="0.9"/>
+  <circle cx="22" cy="25" r="4" fill="#00D4FF"/>
+  <!-- Right node (agent) -->
+  <circle cx="52" cy="25" r="8" fill="#2E2EFF" opacity="0.9"/>
+  <circle cx="52" cy="25" r="4" fill="#00D4FF"/>
+  <!-- Payment flow line -->
+  <line x1="30" y1="25" x2="44" y2="25" stroke="#00D4FF" stroke-width="2"/>
+  <polygon points="44,21 50,25 44,29" fill="#00D4FF"/>
+  <!-- Wordmark -->
+  <text x="66" y="31" font-family="Inter, sans-serif" font-weight="800" font-size="22" fill="white">Agent</text>
+  <text x="134" y="31" font-family="Inter, sans-serif" font-weight="800" font-size="22" fill="#00D4FF">Pay</text>
+</svg>

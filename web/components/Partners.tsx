@@ -1,0 +1,67 @@
+import Image from 'next/image'
+
+export default function Partners() {
+  return (
+    <section id="partners" className="section-padding">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Partners</h2>
+          <p className="text-muted text-lg max-w-2xl mx-auto">
+            AgentPay is powered by the BSV Blockchain Association and supported by leading organizations in AI and blockchain.
+          </p>
+        </div>
+
+        {/* Organizer */}
+        <div className="text-center mb-16">
+          <div className="text-sm font-mono text-accent mb-4 uppercase tracking-wider">Organized By</div>
+          <div className="inline-flex items-center gap-4 glass-card rounded-xl px-8 py-6">
+            <Image src="/logo_BSV.png" alt="BSV Blockchain" width={60} height={60} />
+            <div className="text-left">
+              <div className="font-bold text-lg">BSV Blockchain</div>
+              <div className="text-sm text-muted">Association</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Partner tiers */}
+        <div className="space-y-12">
+          {/* Community */}
+          <div>
+            <div className="text-center mb-6">
+              <span className="inline-block px-4 py-1 rounded-full bg-white/5 border border-white/10 text-muted text-sm font-mono">
+                COMMUNITY PARTNERS
+              </span>
+            </div>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a
+                href="https://www.linkedin.com/company/european-students-blockchain-coalition/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-card rounded-lg px-6 py-4 flex items-center gap-3 hover:border-accent/20 transition-all"
+              >
+                <Image src="/partners/esbc.jpeg" alt="ESBC" width={40} height={40} className="rounded" />
+                <span className="text-sm font-semibold">ESBC</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Become a partner */}
+        <div className="mt-16 text-center">
+          <div className="glass-card rounded-xl p-8 max-w-2xl mx-auto border-primary/20">
+            <h3 className="text-xl font-bold mb-3">Become a Partner</h3>
+            <p className="text-muted mb-6">
+              Support the next generation of AI agent developers. Platinum, Gold, Silver, and Community tiers available.
+            </p>
+            <a
+              href="mailto:hackathon@bsvblockchain.org"
+              className="inline-block px-6 py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-colors"
+            >
+              Partner With Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
