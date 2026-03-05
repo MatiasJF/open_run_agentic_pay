@@ -37,7 +37,7 @@ export default function About() {
             What is <span className="text-accent">AgentPay</span>?
           </h2>
           <p className="text-muted text-lg max-w-3xl mx-auto">
-            AgentPay Global Hackathon is an online global competition challenging developers to build applications where AI agents autonomously discover each other, negotiate, and exchange value through micro-payments. The hackathon is positioned as an AI-powered development event — fully agent-agnostic, meaning participants can use any AI coding tool they prefer. While AI-assisted development is encouraged, submissions will be judged on code quality, maintainability, and technical rigor. Solo developers and teams of up to four — this is your chance to pioneer machine-to-machine economies.
+            Open Run AgentPay is an online global competition challenging developers to build applications where AI agents autonomously discover each other, negotiate, and exchange value through micro-payments. The hackathon is positioned as an AI-powered development event — fully agent-agnostic, meaning participants can use any AI coding tool they prefer. While AI-assisted development is encouraged, submissions will be judged on code quality, maintainability, and technical rigor. Solo developers and teams of up to four — this is your chance to pioneer machine-to-machine economies.
           </p>
         </div>
 
@@ -56,7 +56,7 @@ export default function About() {
           <h3 className="text-2xl font-bold mb-6 text-center">Who Should Participate?</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { label: 'AI-Powered Devs', desc: 'Ship fast with your favorite AI tools' },
+              { label: 'AI-Powered Devs', desc: 'Ship fast with your favourite AI tools' },
               { label: 'AI/ML Engineers', desc: 'Building autonomous agent systems' },
               { label: 'Full-Stack Devs', desc: 'Shipping end-to-end applications' },
               { label: 'Blockchain Devs', desc: 'Exploring BSV micro-payments' },

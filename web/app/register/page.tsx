@@ -91,7 +91,7 @@ export default function RegisterPage() {
 
   const canProceed = (): boolean => {
     switch (step) {
-      case 1: return !!(form.name && form.email && form.country)
+      case 1: return !!(form.name && form.email && form.discord && form.country)
       case 2: return !!(form.devLevel && form.bsvExperience)
       case 3: {
         if (form.teamPreference === 'create') return !!form.teamName.trim()
@@ -100,7 +100,7 @@ export default function RegisterPage() {
         }
         return true
       }
-      case 4: return form.acceptRules && form.acceptCoC
+      case 4: return form.acceptRules && form.acceptCoC && form.emailConsent
       default: return false
     }
   }
@@ -139,7 +139,7 @@ export default function RegisterPage() {
           <div className="text-6xl mb-6">&#10003;</div>
           <h1 className="text-3xl font-bold mb-4">You&apos;re Registered!</h1>
           <p className="text-muted mb-2">
-            Welcome to AgentPay Global Hackathon, <span className="text-white font-semibold">{form.name}</span>.
+            Welcome to Open Run AgentPay, <span className="text-white font-semibold">{form.name}</span>.
           </p>
           <p className="text-muted mb-8">
             We&apos;ll send event details and resources to <span className="text-accent">{form.email}</span>.
@@ -182,7 +182,7 @@ export default function RegisterPage() {
             <Image src="/openrun/logo-stacked-cyan.svg" alt="Open Run" width={140} height={36} className="mx-auto mb-6" />
           </Link>
           <h1 className="text-3xl font-bold mb-2">Register</h1>
-          <p className="text-muted">Join AgentPay Global Hackathon</p>
+          <p className="text-muted">Join Open Run AgentPay</p>
         </div>
 
         {/* Step indicator */}
@@ -224,6 +224,13 @@ export default function RegisterPage() {
                   placeholder="you@example.com" />
               </div>
               <div>
+                <label className="block text-sm font-medium mb-1.5">Discord Handle *</label>
+                <input type="text" value={form.discord} onChange={(e) => update('discord', e.target.value)}
+                  className="w-full px-4 py-2.5 bg-dark-bg border border-white/10 rounded-lg text-white placeholder:text-muted/50 focus:border-accent focus:outline-none"
+                  placeholder="username" />
+                <p className="text-xs text-muted mt-1">We use Discord as our primary communication channel</p>
+              </div>
+              <div>
                 <label className="block text-sm font-medium mb-1.5">Country *</label>
                 <input type="text" value={form.country} onChange={(e) => update('country', e.target.value)}
                   className="w-full px-4 py-2.5 bg-dark-bg border border-white/10 rounded-lg text-white placeholder:text-muted/50 focus:border-accent focus:outline-none"
@@ -235,19 +242,11 @@ export default function RegisterPage() {
                   className="w-full px-4 py-2.5 bg-dark-bg border border-white/10 rounded-lg text-white placeholder:text-muted/50 focus:border-accent focus:outline-none"
                   placeholder="github-username" />
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium mb-1.5">X Handle</label>
-                  <input type="text" value={form.xHandle} onChange={(e) => update('xHandle', e.target.value)}
-                    className="w-full px-4 py-2.5 bg-dark-bg border border-white/10 rounded-lg text-white placeholder:text-muted/50 focus:border-accent focus:outline-none"
-                    placeholder="@handle" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-1.5">Discord</label>
-                  <input type="text" value={form.discord} onChange={(e) => update('discord', e.target.value)}
-                    className="w-full px-4 py-2.5 bg-dark-bg border border-white/10 rounded-lg text-white placeholder:text-muted/50 focus:border-accent focus:outline-none"
-                    placeholder="user#1234" />
-                </div>
+              <div>
+                <label className="block text-sm font-medium mb-1.5">X Handle</label>
+                <input type="text" value={form.xHandle} onChange={(e) => update('xHandle', e.target.value)}
+                  className="w-full px-4 py-2.5 bg-dark-bg border border-white/10 rounded-lg text-white placeholder:text-muted/50 focus:border-accent focus:outline-none"
+                  placeholder="@handle" />
               </div>
             </div>
           )}
@@ -409,8 +408,8 @@ export default function RegisterPage() {
                   <input type="checkbox" checked={form.emailConsent}
                     onChange={(e) => update('emailConsent', e.target.checked)}
                     className="w-4 h-4 mt-0.5 rounded border-white/20 bg-dark-bg text-accent focus:ring-accent" />
-                  <span className="text-sm text-muted">
-                    I consent to receiving event-related emails from the BSV Association
+                  <span className="text-sm">
+                    I consent to receiving communications from the BSV Association *
                   </span>
                 </label>
                 <label className="flex items-start gap-3 cursor-pointer">

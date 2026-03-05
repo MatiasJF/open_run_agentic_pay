@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: 'Can I participate solo?',
-    a: 'Absolutely! Solo developers using AI coding assistants are treated as first-class participants — this is not a team-only event. Grab your favorite AI coding tool and start building.',
+    a: 'Absolutely! Solo developers using AI coding assistants are treated as first-class participants — this is not a team-only event. Grab your favourite AI coding tool and start building.',
   },
   {
     q: 'What counts as a "working demo"?',

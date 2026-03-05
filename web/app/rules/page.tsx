@@ -16,7 +16,7 @@ export default function RulesPage() {
             <Image src="/openrun/logo-stacked-cyan.svg" alt="Open Run" width={120} height={32} />
           </div>
           <h1 className="text-3xl font-bold mb-2">Official Rules</h1>
-          <p className="text-muted">AgentPay Global Hackathon 2026 &mdash; Powered by the BSV Association</p>
+          <p className="text-muted">Open Run AgentPay 2026 &mdash; Powered by the BSV Association</p>
         </div>
 
         <div className="prose prose-invert max-w-none space-y-8">
@@ -95,7 +95,7 @@ export default function RulesPage() {
             <p className="text-muted text-sm mb-3">Submissions will be disqualified for:</p>
             <ul className="space-y-2 text-muted text-sm">
               <li>No on-chain BSV transactions.</li>
-              <li>No autonomous agent behavior (human-triggered transactions don&apos;t count).</li>
+              <li>No autonomous agent behaviour (human-triggered transactions don&apos;t count).</li>
               <li>Plagiarism or use of someone else&apos;s hackathon submission.</li>
               <li>No working demo submitted.</li>
               <li>Violation of the Code of Conduct.</li>
@@ -106,7 +106,7 @@ export default function RulesPage() {
             <h2 className="text-xl font-bold mb-4">8. Intellectual Property</h2>
             <ul className="space-y-2 text-muted text-sm">
               <li>You retain full ownership of your code and intellectual property.</li>
-              <li>By submitting, you grant the BSV Association a non-exclusive license to feature your project in promotional materials.</li>
+              <li>By submitting, you grant the BSV Association a non-exclusive licence to feature your project in promotional materials.</li>
               <li>Open-sourcing your project is encouraged but not required.</li>
             </ul>
           </section>

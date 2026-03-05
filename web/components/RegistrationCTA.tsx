@@ -13,7 +13,7 @@ export default function RegistrationCTA() {
               Ready to Build the Future?
             </h2>
             <p className="text-muted text-lg mb-8 max-w-xl mx-auto">
-              Grab your favorite AI tool, join builders worldwide, and create the first generation of autonomous AI agent payment systems.
+              Grab your favourite AI tool, join builders worldwide, and create the first generation of autonomous AI agent payment systems.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
