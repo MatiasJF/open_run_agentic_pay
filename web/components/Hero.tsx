@@ -38,7 +38,7 @@ export default function Hero() {
           />
         </div>
 
-        <p className="text-lg sm:text-xl text-muted max-w-2xl mx-auto mb-6">
+        <p className="text-lg sm:text-xl text-muted max-w-2xl mx-auto mb-6 mt-4">
           Build the future of autonomous AI payments.
         </p>
 
@@ -83,8 +83,8 @@ export default function Hero() {
 
         {/* Minimum registration notice */}
         <div className="mt-10 inline-block px-4 py-2 rounded-lg border border-accent-warm/20 bg-accent-warm/5">
-          <p className="text-xs text-accent-warm/80">
-            This event requires a minimum number of teams to proceed. Register early and spread the word!
+          <p className="text-sm text-accent-warm/80">
+            This event is subject to a minimum number of registrations. If the required number is not met, the event may be postponed or cancelled.
           </p>
         </div>
 

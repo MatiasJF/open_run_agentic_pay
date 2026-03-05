@@ -3,7 +3,7 @@ export default function Timeline() {
     { date: 'Mon Mar 16', label: 'Registration Opens', desc: 'Website live, announcement across all channels', active: true },
     { date: 'Thu Mar 20', label: 'Resources Published', desc: 'Starter templates & guides released', active: false },
     { date: 'Tue Mar 25', label: 'Registration Closes', desc: 'Last day to sign up', active: false },
-    { date: 'Thu Mar 26', label: 'Hacking Begins', desc: 'Kickoff livestream at 10:00 UTC — 14 days to build', highlight: true, active: false },
+    { date: 'Thu Mar 26', label: 'Hacking Begins', desc: '14 days to build your multi-agent application', highlight: true, active: false },
     { date: 'Wed Apr 9', label: 'Submissions Due', desc: 'Hard deadline: 23:59 UTC', active: false },
     { date: 'Tue Apr 15', label: 'Results Announced', desc: 'Winners announced — 18:00 UTC', highlight: true, active: false },
   ]

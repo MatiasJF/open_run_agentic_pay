@@ -16,7 +16,7 @@ export default function ResourcesPage() {
             <Image src="/openrun/logo-stacked-cyan.svg" alt="Open Run" width={120} height={32} />
           </div>
           <h1 className="text-3xl font-bold mb-2">Resources</h1>
-          <p className="text-muted">Everything you need to build your AgentPay Global Hackathon project</p>
+          <p className="text-muted">Everything you need to build your Open Run AgentPay project</p>
         </div>
 
         <div className="space-y-8">
@@ -24,22 +24,31 @@ export default function ResourcesPage() {
           <section>
             <h2 className="text-2xl font-bold mb-6">Core Tools</h2>
             <div className="grid sm:grid-cols-2 gap-4">
-              <a href="https://github.com/bsv-blockchain/ts-sdk" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.npmjs.com/package/@bsv/sdk" target="_blank" rel="noopener noreferrer"
+                className="glass-card rounded-xl p-6 hover:border-accent/20 transition-all group">
+                <h3 className="text-lg font-bold mb-2 group-hover:text-accent transition-colors">@bsv/sdk</h3>
+                <p className="text-sm text-muted mb-3">
+                  Core JS/TS library for BSV developers. The foundation for building BSV applications.
+                </p>
+                <code className="text-xs font-mono text-accent bg-accent/10 px-2 py-1 rounded">npm install @bsv/sdk</code>
+              </a>
+
+              <a href="https://www.npmjs.com/package/@bsv/simple" target="_blank" rel="noopener noreferrer"
                 className="glass-card rounded-xl p-6 hover:border-accent/20 transition-all group">
                 <h3 className="text-lg font-bold mb-2 group-hover:text-accent transition-colors">@bsv/simple</h3>
                 <p className="text-sm text-muted mb-3">
-                  The main library for building BSV applications. Handles wallets, payments, tokens, credentials, messaging, and more.
+                  Modular library for BSV wallets, payments, tokens, credentials, messaging, and more.
                 </p>
                 <code className="text-xs font-mono text-accent bg-accent/10 px-2 py-1 rounded">npm install @bsv/simple</code>
               </a>
 
-              <a href="https://github.com/bsv-blockchain/simple-mcp" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.npmjs.com/package/@bsv/simple-mcp" target="_blank" rel="noopener noreferrer"
                 className="glass-card rounded-xl p-6 hover:border-accent/20 transition-all group">
-                <h3 className="text-lg font-bold mb-2 group-hover:text-accent transition-colors">simple-mcp</h3>
+                <h3 className="text-lg font-bold mb-2 group-hover:text-accent transition-colors">@bsv/simple-mcp</h3>
                 <p className="text-sm text-muted mb-3">
                   MCP server that gives your AI coding assistant deep knowledge of the BSV stack. 11 resources, 9 tools, 3 prompts.
                 </p>
-                <code className="text-xs font-mono text-accent bg-accent/10 px-2 py-1 rounded">git clone &amp; npm run build</code>
+                <code className="text-xs font-mono text-accent bg-accent/10 px-2 py-1 rounded">npm install @bsv/simple-mcp</code>
               </a>
 
               <a href="https://desktop.bsvb.tech" target="_blank" rel="noopener noreferrer"
@@ -50,89 +59,6 @@ export default function ResourcesPage() {
                 </p>
                 <code className="text-xs font-mono text-accent bg-accent/10 px-2 py-1 rounded">desktop.bsvb.tech</code>
               </a>
-
-              <div className="glass-card rounded-xl p-6 border-dashed border-white/10">
-                <h3 className="text-lg font-bold mb-2">Starter Templates</h3>
-                <p className="text-sm text-muted mb-3">
-                  Pre-built Next.js templates with wallet integration, agent loops, and MCP config. Three levels of complexity.
-                </p>
-                <span className="inline-block text-xs font-mono text-accent-warm bg-accent-warm/10 px-2 py-1 rounded">Available March 20</span>
-              </div>
-            </div>
-          </section>
-
-          {/* MCP Setup Guide */}
-          <section>
-            <h2 className="text-2xl font-bold mb-6">MCP Server Setup</h2>
-            <div className="glass-card rounded-xl p-6 sm:p-8">
-              <p className="text-muted text-sm mb-4">
-                The MCP server gives your AI coding assistant (Claude Code, Cursor, Windsurf, etc.) deep knowledge of the BSV stack. Follow these steps to set it up:
-              </p>
-
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-sm mb-2">1. Clone and build</h4>
-                  <pre className="bg-dark-bg rounded-lg p-4 text-sm font-mono text-accent overflow-x-auto">
-{`git clone git@github.com:bsv-blockchain/simple-mcp.git
-cd simple-mcp
-npm install
-npm run build`}
-                  </pre>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-sm mb-2">2. Configure your AI tool</h4>
-                  <p className="text-muted text-xs mb-2">For Claude Code, add to <code className="text-accent">~/.claude/settings.json</code>:</p>
-                  <pre className="bg-dark-bg rounded-lg p-4 text-sm font-mono text-accent overflow-x-auto">
-{`{
-  "mcpServers": {
-    "simple": {
-      "command": "node",
-      "args": ["/path/to/simple-mcp/dist/index.js"]
-    }
-  }
-}`}
-                  </pre>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-sm mb-2">3. Verify it works</h4>
-                  <p className="text-muted text-sm">
-                    Start your AI tool and ask it about BSV payments or wallet creation. It should have access to all @bsv/simple documentation and code generation tools.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Quick Start Guide */}
-          <section>
-            <h2 className="text-2xl font-bold mb-6">Quick Start: Agent Wallet in 20 Lines</h2>
-            <div className="glass-card rounded-xl p-6 sm:p-8">
-              <pre className="bg-dark-bg rounded-lg p-4 text-sm font-mono text-accent overflow-x-auto">
-{`import { WalletClient } from '@bsv/sdk'
-import { Services, StorageClient } from '@bsv/wallet-toolbox'
-
-// Create a server-side agent wallet
-const services = new Services('mainnet')
-const storage = new StorageClient(services, 'agent-wallet.db')
-const wallet = new WalletClient(storage)
-
-// Agent sends a payment
-const { txid } = await wallet.createAction({
-  description: 'Agent payment for data access',
-  outputs: [{
-    satoshis: 100,  // ~$0.003
-    lockingScript: recipientScript,
-    outputDescription: 'payment',
-  }],
-})
-
-console.log('Payment sent:', txid)`}
-              </pre>
-              <p className="text-xs text-muted mt-3">
-                This is a simplified example. See the full @bsv/simple documentation for complete patterns including P2P messaging, identity, and credentials.
-              </p>
             </div>
           </section>
 
@@ -169,48 +95,6 @@ console.log('Payment sent:', txid)`}
                 <div key={concept.title} className="glass-card rounded-xl p-5">
                   <h3 className="font-bold mb-1">{concept.title}</h3>
                   <p className="text-sm text-muted">{concept.desc}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Reference Implementations */}
-          <section>
-            <h2 className="text-2xl font-bold mb-6">Reference Implementations</h2>
-            <p className="text-muted text-sm mb-4">
-              Three existing challenge solutions from the BSV-Simplify project are available as reference:
-            </p>
-            <div className="space-y-3">
-              {[
-                { name: 'Proof of Receipt', desc: 'Payment verification with on-chain receipts' },
-                { name: 'Peer Tip Jar', desc: 'P2P payments with identity registry and DID resolution' },
-                { name: 'Verified Freelancer Marketplace', desc: 'Credentials, identity, and payments in a marketplace' },
-              ].map((ref) => (
-                <div key={ref.name} className="glass-card rounded-lg p-4 flex items-center gap-4">
-                  <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0" />
-                  <div>
-                    <div className="font-semibold text-sm">{ref.name}</div>
-                    <div className="text-xs text-muted">{ref.desc}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Starter Templates */}
-          <section>
-            <h2 className="text-2xl font-bold mb-6">Starter Templates</h2>
-            <p className="text-muted text-sm mb-4">Three template levels to get you started fast (available March 20):</p>
-            <div className="grid sm:grid-cols-3 gap-4">
-              {[
-                { name: 'Minimal', desc: 'Next.js + Tailwind + wallet connect + MCP config', level: 'Level 1' },
-                { name: 'Agent', desc: 'Minimal + 2 server wallets + identity registry + agent loop skeleton', level: 'Level 2' },
-                { name: 'Full-Stack', desc: 'Agent + credentials + tokens + MessageBox + multi-agent orchestration', level: 'Level 3' },
-              ].map((template) => (
-                <div key={template.name} className="glass-card rounded-xl p-5 border-dashed border-white/10">
-                  <div className="text-xs font-mono text-accent mb-2">{template.level}</div>
-                  <h3 className="font-bold mb-1">{template.name}</h3>
-                  <p className="text-xs text-muted">{template.desc}</p>
                 </div>
               ))}
             </div>

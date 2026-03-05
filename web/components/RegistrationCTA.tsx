@@ -29,11 +29,11 @@ export default function RegistrationCTA() {
                 View Resources
               </a>
             </div>
-            <p className="mt-6 text-sm text-muted">
+            <p className="mt-6 text-base text-muted font-semibold">
               Registration closes March 25, 2026 &middot; Hacking period March 26 &ndash; April 9
             </p>
-            <p className="mt-3 text-xs text-accent-warm/80">
-              Note: The hackathon may be turned down if too few teams register. Register early and spread the word!
+            <p className="mt-3 text-sm text-accent-warm/80">
+              This event is subject to a minimum number of registrations. If the required number is not met, the event may be postponed or cancelled.
             </p>
           </div>
         </div>

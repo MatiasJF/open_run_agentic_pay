@@ -9,8 +9,8 @@ export default function Prizes() {
     },
     {
       place: 'Runner Up',
-      color: 'from-gray-300 to-gray-500',
-      border: 'border-gray-400/30',
+      color: 'from-or-green to-emerald-500',
+      border: 'border-or-green/30',
       amount: '$2,500',
     },
     {
@@ -43,18 +43,46 @@ export default function Prizes() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto auto-rows-fr">
-          {prizes.map((prize) => (
+        {/* Grand Prize — full width */}
+        <div className="max-w-md mx-auto mb-6">
+          <div className="glass-card rounded-xl p-8 border border-accent-warm/30 flex flex-col items-center text-center ring-1 ring-accent-warm/40 shadow-lg shadow-accent-warm/10">
+            <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-accent-warm to-fuchsia-600 bg-clip-text text-transparent">
+              Grand Prize
+            </h3>
+            <div className="text-5xl font-black font-mono bg-gradient-to-r from-accent-warm to-fuchsia-600 bg-clip-text text-transparent">
+              $4,500
+            </div>
+          </div>
+        </div>
+
+        {/* Runner Up + Best Solo Builder */}
+        <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto mb-6">
+          {prizes.filter(p => !p.grand).slice(0, 2).map((prize) => (
             <div
               key={prize.place}
-              className={`glass-card rounded-xl p-6 border ${prize.border} flex flex-col items-center text-center ${
-                prize.grand ? 'sm:col-span-2 lg:col-span-1 ring-1 ring-accent-warm/40 shadow-lg shadow-accent-warm/10' : ''
-              }`}
+              className={`glass-card rounded-xl p-6 border ${prize.border} flex flex-col items-center text-center`}
             >
               <h3 className={`text-xl font-bold mb-3 bg-gradient-to-r ${prize.color} bg-clip-text text-transparent`}>
                 {prize.place}
               </h3>
-              <div className={`text-4xl font-black font-mono text-accent-warm ${prize.grand ? 'text-5xl' : ''}`}>
+              <div className={`text-4xl font-black font-mono bg-gradient-to-r ${prize.color} bg-clip-text text-transparent`}>
+                {prize.amount}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Most Innovative + Best MCP Use */}
+        <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          {prizes.filter(p => !p.grand).slice(2).map((prize) => (
+            <div
+              key={prize.place}
+              className={`glass-card rounded-xl p-6 border ${prize.border} flex flex-col items-center text-center`}
+            >
+              <h3 className={`text-xl font-bold mb-3 bg-gradient-to-r ${prize.color} bg-clip-text text-transparent`}>
+                {prize.place}
+              </h3>
+              <div className={`text-4xl font-black font-mono bg-gradient-to-r ${prize.color} bg-clip-text text-transparent`}>
                 {prize.amount}
               </div>
             </div>
