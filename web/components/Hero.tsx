@@ -25,9 +25,9 @@ export default function Hero() {
       {/* Gradient overlay for readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-dark-bg/60 via-dark-bg/40 to-dark-bg" />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center pt-24">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center pt-32">
         {/* Open Run Logo */}
-        <div className="mb-8">
+        <div className="">
           <Image
             src="/openrun/logo-stacked-cyan.svg"
             alt="Open Run"
@@ -38,26 +38,30 @@ export default function Hero() {
           />
         </div>
 
-        <p className="text-lg sm:text-xl text-muted max-w-2xl mx-auto mb-4">
+        <p className="text-lg sm:text-xl text-muted max-w-2xl mx-auto mb-6">
           Build the future of autonomous AI payments.
         </p>
-        <p className="text-base text-muted/70 max-w-xl mx-auto mb-10">
-          Use any AI coding tool you love. Build apps where AI agents discover each other, negotiate, and exchange value through BSV micro-payments.
-        </p>
 
-        {/* Dates */}
-        <div className="flex flex-wrap justify-center gap-6 mb-10 font-mono text-sm">
-          <div className="glass-card rounded-lg px-5 py-3">
-            <div className="text-accent font-semibold">REGISTRATION</div>
-            <div className="text-white">Mar 16 &ndash; 25</div>
+        {/* Prize total */}
+        <div className="mb-8">
+          <span className="text-4xl sm:text-5xl font-black font-mono text-accent-warm">
+            $10,000 in Prizes
+          </span>
+        </div>
+
+        {/* Dates — bigger and bolder */}
+        <div className="flex flex-wrap justify-center gap-6 mb-10 font-mono">
+          <div className="glass-card rounded-lg px-6 py-4">
+            <div className="text-accent font-bold text-sm sm:text-base tracking-wide">REGISTRATION</div>
+            <div className="text-white text-xl sm:text-2xl font-bold">Mar 16 &ndash; 25</div>
           </div>
-          <div className="glass-card rounded-lg px-5 py-3">
-            <div className="text-accent font-semibold">HACKATHON</div>
-            <div className="text-white">Mar 26 &ndash; Apr 9</div>
+          <div className="glass-card rounded-lg px-6 py-4">
+            <div className="text-accent font-bold text-sm sm:text-base tracking-wide">HACKATHON</div>
+            <div className="text-white text-xl sm:text-2xl font-bold">Mar 26 &ndash; Apr 9</div>
           </div>
-          <div className="glass-card rounded-lg px-5 py-3">
-            <div className="text-accent font-semibold">RESULTS</div>
-            <div className="text-white">Apr 15</div>
+          <div className="glass-card rounded-lg px-6 py-4">
+            <div className="text-accent font-bold text-sm sm:text-base tracking-wide">RESULTS</div>
+            <div className="text-white text-xl sm:text-2xl font-bold">Apr 15</div>
           </div>
         </div>
 

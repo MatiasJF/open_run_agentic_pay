@@ -1,9 +1,8 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
-import About from '@/components/About'
+import Prizes from '@/components/Prizes'
 import Challenge from '@/components/Challenge'
 import TechStack from '@/components/TechStack'
-import Prizes from '@/components/Prizes'
 import Timeline from '@/components/Timeline'
 import Judges from '@/components/Judges'
 import Partners from '@/components/Partners'
@@ -17,10 +16,9 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <About />
+        <Prizes />
         <Challenge />
         <TechStack />
-        <Prizes />
         <Timeline />
         <Judges />
         <Partners />

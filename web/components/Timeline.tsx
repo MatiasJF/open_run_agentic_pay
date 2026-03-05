@@ -1,14 +1,10 @@
 export default function Timeline() {
   const events = [
     { date: 'Mon Mar 16', label: 'Registration Opens', desc: 'Website live, announcement across all channels', active: true },
-    { date: 'Mar 16 – 25', label: 'Registration Period', desc: '10 days of signups + marketing push', active: true },
     { date: 'Thu Mar 20', label: 'Resources Published', desc: 'Starter templates & guides released', active: false },
     { date: 'Tue Mar 25', label: 'Registration Closes', desc: 'Last day to sign up', active: false },
-    { date: 'Tue Mar 25', label: 'Onboarding Email', desc: 'Pre-hackathon info sent to all registrants', active: false },
     { date: 'Thu Mar 26', label: 'Hacking Begins', desc: 'Kickoff livestream at 10:00 UTC — 14 days to build', highlight: true, active: false },
-    { date: 'Mar 26 – Apr 9', label: 'Hacking Period', desc: '14 days to build your multi-agent application', active: false },
     { date: 'Wed Apr 9', label: 'Submissions Due', desc: 'Hard deadline: 23:59 UTC', active: false },
-    { date: 'Apr 10 – 14', label: 'Judging Period', desc: 'Panel reviews all submissions', active: false },
     { date: 'Tue Apr 15', label: 'Results Announced', desc: 'Winners announced — 18:00 UTC', highlight: true, active: false },
   ]
 

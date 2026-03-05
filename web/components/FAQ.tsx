@@ -23,26 +23,6 @@ const faqs = [
     q: 'What counts as a "working demo"?',
     a: 'A video recording (3-5 minutes) or deployed web app showing your AI agents discovering each other and making autonomous BSV transactions. The agents must transact on-chain — simulated transactions don\'t count.',
   },
-  {
-    q: 'Can I use pre-existing code?',
-    a: 'You can use open-source libraries, APIs, and the provided starter templates. Your core agent logic and payment integration must be built during the hackathon period. Pre-existing boilerplate (UI frameworks, auth, etc.) is fine.',
-  },
-  {
-    q: 'What AI tools can I use?',
-    a: 'Anything you want — this hackathon is fully agent-agnostic. Claude, ChatGPT, Gemini, Copilot, Cursor, Windsurf, open-source models, local LLMs, or a mix. For your agents, same deal: use any AI model. The focus is on what your agents do with BSV payments, not which tools you build with.',
-  },
-  {
-    q: 'How do I get BSV for testing?',
-    a: 'Download the BSV Desktop Wallet from desktop.bsvb.tech. You can purchase small amounts of BSV through the wallet or exchanges. You only need a few cents worth for micro-transactions.',
-  },
-  {
-    q: 'When will prize amounts be announced?',
-    a: 'Prize amounts will scale with partner contributions. Follow #AgentPay on X for announcements. Prizes may be awarded in BSV or fiat at the organizer\'s discretion.',
-  },
-  {
-    q: 'Can the hackathon be cancelled?',
-    a: 'The hackathon may be turned down if too few teams register. We need a minimum number of participants to ensure a competitive and meaningful event. Register early and spread the word to help make it happen!',
-  },
 ]
 
 export default function FAQ() {

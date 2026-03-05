@@ -18,20 +18,8 @@ export default function Challenge() {
       desc: 'A router agent pays specialist agents per task — translation, summarization, code review.',
     },
     {
-      title: 'Content Licensing',
-      desc: 'Agents negotiate and pay for content usage rights in real time.',
-    },
-    {
       title: 'Compute Settlement',
       desc: 'Distributed compute nodes settle micro-payments for GPU/CPU time.',
-    },
-    {
-      title: 'IoT Data Economy',
-      desc: 'Sensor agents sell real-time environmental or location data.',
-    },
-    {
-      title: 'Your Idea Here',
-      desc: 'These are just inspiration. Build whatever excites you.',
     },
   ]
 
@@ -39,9 +27,6 @@ export default function Challenge() {
     <section id="challenge" className="section-padding bg-gradient-to-b from-dark-bg via-card-bg/30 to-dark-bg">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <div className="inline-block px-4 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-mono font-semibold mb-4">
-            SINGLE CHALLENGE
-          </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">The Challenge</h2>
         </div>
 
@@ -69,36 +54,11 @@ export default function Challenge() {
           </div>
         </div>
 
-        {/* How it works */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <h3 className="text-xl font-bold mb-8 text-center">How It Works</h3>
-          <div className="grid sm:grid-cols-3 gap-6">
-            {[
-              { step: '01', title: 'Register & Build', desc: 'Sign up, form a team (or go solo), and build your multi-agent application.' },
-              { step: '02', title: 'Agents Transact', desc: 'Your AI agents discover each other and exchange value autonomously on BSV.' },
-              { step: '03', title: 'Demo & Win', desc: 'Submit a working demo video showing your agents in action.' },
-            ].map((item) => (
-              <div key={item.step} className="glass-card rounded-xl p-6 text-center">
-                <div className="text-4xl font-black text-accent/30 font-mono mb-3">{item.step}</div>
-                <h4 className="text-lg font-bold mb-2">{item.title}</h4>
-                <p className="text-sm text-muted">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Think bigger callout */}
+        {/* Scale requirement */}
         <div className="max-w-4xl mx-auto mb-16">
           <div className="glass-card rounded-xl p-6 sm:p-8 border-accent-warm/20 bg-accent-warm/5">
-            <h3 className="text-xl font-bold mb-3 text-accent-warm">Think Bigger, Not Smaller</h3>
-            <p className="text-muted text-sm mb-4">
-              We&apos;re not looking for toy demos. We want to see systems that could become real products and platforms — solutions that solve a problem for yourself, for your community, or for an industry.
-            </p>
-            <p className="text-muted text-sm mb-4">
-              Build with integration in mind. The best submissions won&apos;t just be a finished product — they&apos;ll be a <strong className="text-white">capability</strong> that others can build on top of, plug into, or extend. Think APIs, protocols, and composable agent architectures.
-            </p>
             <p className="text-muted text-sm">
-              <strong className="text-white">Scale requirement:</strong> For eligibility, agents must demonstrate <strong className="text-accent">at least 1.5 million transactions recorded on-chain within a designated 24-hour window</strong>. Transactions must be meaningful to the application&apos;s functionality — artificial inflation will result in disqualification. This is BSV — we build at scale.
+              <strong className="text-white">Scale requirement:</strong> For eligibility, agents must demonstrate <strong className="text-accent">at least 1.5 million transactions recorded on-chain within a designated 24-hour window</strong>. Transactions must be meaningful to the application&apos;s functionality — artificial inflation will result in disqualification.
             </p>
           </div>
         </div>
@@ -106,7 +66,7 @@ export default function Challenge() {
         {/* Ideas */}
         <div>
           <h3 className="text-xl font-bold mb-8 text-center">Example Project Ideas</h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
             {ideas.map((idea) => (
               <div key={idea.title} className="glass-card rounded-xl p-6 hover:border-accent/20 transition-all">
                 <h4 className="font-semibold mb-1">{idea.title}</h4>

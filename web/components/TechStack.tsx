@@ -4,31 +4,25 @@ export default function TechStack() {
       name: '@bsv/sdk',
       desc: 'Core JS/TS library for BSV developers. The foundation for building BSV applications.',
       tag: 'npm install @bsv/sdk',
-      link: 'https://github.com/bsv-blockchain/ts-sdk',
+      link: 'https://www.npmjs.com/package/@bsv/sdk',
     },
     {
       name: '@bsv/simple',
       desc: 'Modular library for BSV wallets, payments, tokens, credentials, messaging, and more.',
       tag: 'npm install @bsv/simple',
-      link: 'https://github.com/bsv-blockchain/ts-sdk',
+      link: 'https://www.npmjs.com/package/@bsv/simple',
     },
     {
-      name: 'simple-mcp',
+      name: '@bsv/simple-mcp',
       desc: 'MCP server for AI-assisted BSV development. 11 resources, 9 code-gen tools, 3 prompts.',
       tag: 'AI Assistant Integration',
-      link: 'https://github.com/bsv-blockchain/simple-mcp',
+      link: 'https://www.npmjs.com/package/@bsv/simple-mcp',
     },
     {
       name: 'BSV Desktop Wallet',
       desc: 'Full-featured desktop wallet to fund your agents and sign transactions.',
       tag: 'desktop.bsvb.tech',
       link: 'https://desktop.bsvb.tech',
-    },
-    {
-      name: 'Starter Templates',
-      desc: 'Pre-built Next.js templates with wallet integration, agent loops, and MCP config.',
-      tag: 'Coming Mar 20',
-      link: '/resources',
     },
   ]
 
@@ -42,7 +36,7 @@ export default function TechStack() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {tools.map((tool) => (
             <a
               key={tool.name}
@@ -63,18 +57,6 @@ export default function TechStack() {
               </span>
             </a>
           ))}
-        </div>
-
-        {/* Compatible tools */}
-        <div className="mt-12 text-center">
-          <p className="text-sm text-muted mb-4">Build with whatever AI tools you love — we&apos;re fully agent-agnostic</p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm font-mono text-muted">
-            {['Claude Code', 'ChatGPT', 'Cursor', 'Windsurf', 'GitHub Copilot', 'Gemini', 'Open-Source LLMs', 'Any AI Tool'].map((tool) => (
-              <span key={tool} className="px-4 py-2 rounded-lg border border-white/10 bg-white/5">
-                {tool}
-              </span>
-            ))}
-          </div>
         </div>
       </div>
     </section>

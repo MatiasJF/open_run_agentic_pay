@@ -5,9 +5,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#challenge', label: 'Challenge' },
   { href: '#prizes', label: 'Prizes' },
+  { href: '#challenge', label: 'Challenge' },
+  { href: '#techstack', label: 'Tech Stack' },
   { href: '#timeline', label: 'Timeline' },
   { href: '#judges', label: 'Judges' },
   { href: '#partners', label: 'Partners' },
@@ -20,8 +20,8 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-dark-bg/80 backdrop-blur-lg border-b border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center gap-2">
+        <div className="flex items-center justify-between h-20">
+          <Link href="/" className="flex items-center gap-2 mt-4">
             <Image src="/openrun/logo-linear-cyan.svg" alt="Open Run" width={160} height={40} />
           </Link>
 
