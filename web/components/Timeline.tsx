@@ -1,15 +1,15 @@
 export default function Timeline() {
   const events = [
-    { date: 'Mon Feb 24', label: 'Registration Opens', desc: 'Website live, announcement', active: true },
-    { date: 'Feb 24 – Mar 13', label: 'Registration Period', desc: '18 days of signups + marketing push', active: true },
-    { date: 'Fri Mar 7', label: 'Resources Published', desc: 'Starter templates & guides released', active: false },
-    { date: 'Thu Mar 13', label: 'Registration Closes', desc: 'Last day to sign up', active: false },
-    { date: 'Fri Mar 14', label: 'Onboarding Email', desc: 'Pre-hackathon info sent to all participants', active: false },
-    { date: 'Sat Mar 15', label: 'Hacking Begins', desc: 'Kickoff stream at 10:00 UTC', highlight: true, active: false },
-    { date: 'Mar 15 – 22', label: 'Hacking Period', desc: '8 days to build your project', active: false },
-    { date: 'Sun Mar 22', label: 'Submissions Due', desc: 'Deadline: 23:59 UTC', active: false },
-    { date: 'Mar 23 – 26', label: 'Judging Period', desc: 'Judges review all submissions', active: false },
-    { date: 'Fri Mar 28', label: 'Results Ceremony', desc: 'Winners announced — live stream at 18:00 UTC', highlight: true, active: false },
+    { date: 'Mon Mar 16', label: 'Registration Opens', desc: 'Website live, announcement across all channels', active: true },
+    { date: 'Mar 16 – 25', label: 'Registration Period', desc: '10 days of signups + marketing push', active: true },
+    { date: 'Thu Mar 20', label: 'Resources Published', desc: 'Starter templates & guides released', active: false },
+    { date: 'Tue Mar 25', label: 'Registration Closes', desc: 'Last day to sign up', active: false },
+    { date: 'Tue Mar 25', label: 'Onboarding Email', desc: 'Pre-hackathon info sent to all registrants', active: false },
+    { date: 'Thu Mar 26', label: 'Hacking Begins', desc: 'Kickoff livestream at 10:00 UTC — 14 days to build', highlight: true, active: false },
+    { date: 'Mar 26 – Apr 9', label: 'Hacking Period', desc: '14 days to build your multi-agent application', active: false },
+    { date: 'Wed Apr 9', label: 'Submissions Due', desc: 'Hard deadline: 23:59 UTC', active: false },
+    { date: 'Apr 10 – 14', label: 'Judging Period', desc: 'Panel reviews all submissions', active: false },
+    { date: 'Tue Apr 15', label: 'Results Announced', desc: 'Winners announced — 18:00 UTC', highlight: true, active: false },
   ]
 
   return (

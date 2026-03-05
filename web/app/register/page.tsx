@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -31,6 +31,13 @@ interface FormData {
   partnerDataSharing: boolean
 }
 
+interface TeamValidation {
+  valid: boolean
+  teamName?: string
+  memberCount?: number
+  isFull?: boolean
+}
+
 const initialFormData: FormData = {
   name: '', email: '', country: '', github: '', xHandle: '', discord: '',
   devLevel: '', bsvExperience: '', aiTool: '', primaryLanguage: '',
@@ -44,16 +51,55 @@ export default function RegisterPage() {
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
+  const [resultInviteCode, setResultInviteCode] = useState('')
+  const [resultTeamName, setResultTeamName] = useState('')
+
+  // Team code validation state
+  const [teamValidation, setTeamValidation] = useState<TeamValidation | null>(null)
+  const [validating, setValidating] = useState(false)
 
   const update = (field: keyof FormData, value: string | boolean) => {
     setForm((prev) => ({ ...prev, [field]: value }))
   }
 
+  // Debounced invite code validation
+  const validateCode = useCallback(async (code: string) => {
+    if (code.length !== 6) {
+      setTeamValidation(null)
+      return
+    }
+    setValidating(true)
+    try {
+      const res = await fetch(`/api/teams/validate?code=${encodeURIComponent(code)}`)
+      const data: TeamValidation = await res.json()
+      setTeamValidation(data)
+    } catch {
+      setTeamValidation(null)
+    } finally {
+      setValidating(false)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (form.teamPreference !== 'join' || form.teamCode.length !== 6) {
+      setTeamValidation(null)
+      return
+    }
+    const timer = setTimeout(() => validateCode(form.teamCode), 400)
+    return () => clearTimeout(timer)
+  }, [form.teamCode, form.teamPreference, validateCode])
+
   const canProceed = (): boolean => {
     switch (step) {
       case 1: return !!(form.name && form.email && form.country)
       case 2: return !!(form.devLevel && form.bsvExperience)
-      case 3: return true
+      case 3: {
+        if (form.teamPreference === 'create') return !!form.teamName.trim()
+        if (form.teamPreference === 'join') {
+          return form.teamCode.length === 6 && !!teamValidation?.valid && !teamValidation?.isFull
+        }
+        return true
+      }
       case 4: return form.acceptRules && form.acceptCoC
       default: return false
     }
@@ -68,16 +114,22 @@ export default function RegisterPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       })
+      const data = await res.json()
       if (!res.ok) {
-        const data = await res.json()
         throw new Error(data.error || 'Registration failed')
       }
+      if (data.teamInviteCode) setResultInviteCode(data.teamInviteCode)
+      if (data.teamName) setResultTeamName(data.teamName)
       setSubmitted(true)
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Something went wrong')
     } finally {
       setSubmitting(false)
     }
+  }
+
+  const copyInviteCode = () => {
+    navigator.clipboard.writeText(resultInviteCode)
   }
 
   if (submitted) {
@@ -92,7 +144,28 @@ export default function RegisterPage() {
           <p className="text-muted mb-8">
             We&apos;ll send event details and resources to <span className="text-accent">{form.email}</span>.
           </p>
-          <Link href="/" className="px-6 py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-colors">
+
+          {resultInviteCode && form.teamPreference === 'create' && (
+            <div className="mb-8 p-6 glass-card rounded-xl">
+              <p className="text-sm text-muted mb-2">Your team invite code for &ldquo;{resultTeamName}&rdquo;</p>
+              <div className="flex items-center justify-center gap-3">
+                <span className="text-3xl font-bold tracking-[6px] text-accent">{resultInviteCode}</span>
+                <button onClick={copyInviteCode} className="px-3 py-1.5 text-xs bg-white/10 hover:bg-white/20 rounded-md transition-colors">
+                  Copy
+                </button>
+              </div>
+              <p className="text-xs text-muted mt-3">Share this with up to 3 teammates</p>
+            </div>
+          )}
+
+          {resultTeamName && form.teamPreference === 'join' && (
+            <div className="mb-8 p-4 glass-card rounded-xl">
+              <p className="text-sm text-muted">You joined team</p>
+              <p className="text-lg font-bold text-accent">{resultTeamName}</p>
+            </div>
+          )}
+
+          <Link href="/" className="px-6 py-3 bg-accent-warm hover:bg-accent-warm/80 text-white font-semibold rounded-lg transition-colors">
             Back to Home
           </Link>
         </div>
@@ -106,10 +179,10 @@ export default function RegisterPage() {
         {/* Header */}
         <div className="text-center mb-8">
           <Link href="/">
-            <Image src="/agentpay-logo.svg" alt="AgentPay" width={140} height={36} className="mx-auto mb-6" />
+            <Image src="/openrun/logo-stacked-cyan.svg" alt="Open Run" width={140} height={36} className="mx-auto mb-6" />
           </Link>
           <h1 className="text-3xl font-bold mb-2">Register</h1>
-          <p className="text-muted">Join the AgentPay Global Hackathon</p>
+          <p className="text-muted">Join AgentPay Global Hackathon</p>
         </div>
 
         {/* Step indicator */}
@@ -117,7 +190,7 @@ export default function RegisterPage() {
           {[1, 2, 3, 4].map((s) => (
             <div key={s} className="flex items-center">
               <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
-                s === step ? 'bg-primary text-white' :
+                s === step ? 'bg-accent-warm text-white' :
                 s < step ? 'bg-accent text-dark-bg' :
                 'bg-card-bg text-muted'
               }`}>
@@ -255,7 +328,7 @@ export default function RegisterPage() {
 
               {form.teamPreference === 'create' && (
                 <div>
-                  <label className="block text-sm font-medium mb-1.5">Team Name</label>
+                  <label className="block text-sm font-medium mb-1.5">Team Name *</label>
                   <input type="text" value={form.teamName} onChange={(e) => update('teamName', e.target.value)}
                     className="w-full px-4 py-2.5 bg-dark-bg border border-white/10 rounded-lg text-white placeholder:text-muted/50 focus:border-accent focus:outline-none"
                     placeholder="Your team name" />
@@ -264,10 +337,35 @@ export default function RegisterPage() {
 
               {form.teamPreference === 'join' && (
                 <div>
-                  <label className="block text-sm font-medium mb-1.5">Team Invite Code</label>
-                  <input type="text" value={form.teamCode} onChange={(e) => update('teamCode', e.target.value)}
-                    className="w-full px-4 py-2.5 bg-dark-bg border border-white/10 rounded-lg text-white placeholder:text-muted/50 focus:border-accent focus:outline-none"
-                    placeholder="Enter invite code" />
+                  <label className="block text-sm font-medium mb-1.5">Team Invite Code *</label>
+                  <input
+                    type="text"
+                    value={form.teamCode}
+                    onChange={(e) => update('teamCode', e.target.value.toUpperCase().slice(0, 6))}
+                    className="w-full px-4 py-2.5 bg-dark-bg border border-white/10 rounded-lg text-white placeholder:text-muted/50 focus:border-accent focus:outline-none font-mono tracking-widest text-lg"
+                    placeholder="XXXXXX"
+                    maxLength={6}
+                  />
+                  {/* Validation feedback */}
+                  {form.teamCode.length === 6 && (
+                    <div className="mt-2">
+                      {validating && (
+                        <p className="text-sm text-muted">Checking code...</p>
+                      )}
+                      {!validating && teamValidation && teamValidation.valid && (
+                        <div className="p-3 bg-green-500/10 border border-green-500/20 rounded-lg">
+                          <p className="text-sm text-green-400 font-medium">{teamValidation.teamName}</p>
+                          <p className="text-xs text-green-400/70">
+                            {teamValidation.memberCount}/4 members
+                            {teamValidation.isFull && ' — Team is full'}
+                          </p>
+                        </div>
+                      )}
+                      {!validating && teamValidation && !teamValidation.valid && (
+                        <p className="text-sm text-red-400">Invalid invite code</p>
+                      )}
+                    </div>
+                  )}
                 </div>
               )}
 
@@ -312,7 +410,7 @@ export default function RegisterPage() {
                     onChange={(e) => update('emailConsent', e.target.checked)}
                     className="w-4 h-4 mt-0.5 rounded border-white/20 bg-dark-bg text-accent focus:ring-accent" />
                   <span className="text-sm text-muted">
-                    I consent to receiving event-related emails from BSV Blockchain Association
+                    I consent to receiving event-related emails from the BSV Association
                   </span>
                 </label>
                 <label className="flex items-start gap-3 cursor-pointer">
@@ -353,7 +451,7 @@ export default function RegisterPage() {
               <button
                 onClick={() => setStep((step + 1) as Step)}
                 disabled={!canProceed()}
-                className="px-6 py-2.5 bg-primary hover:bg-primary-dark disabled:opacity-40 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors text-sm"
+                className="px-6 py-2.5 bg-accent-warm hover:bg-accent-warm/80 disabled:opacity-40 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors text-sm"
               >
                 Continue
               </button>
@@ -361,7 +459,7 @@ export default function RegisterPage() {
               <button
                 onClick={handleSubmit}
                 disabled={!canProceed() || submitting}
-                className="px-6 py-2.5 bg-primary hover:bg-primary-dark disabled:opacity-40 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors text-sm"
+                className="px-6 py-2.5 bg-accent-warm hover:bg-accent-warm/80 disabled:opacity-40 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors text-sm"
               >
                 {submitting ? 'Registering...' : 'Complete Registration'}
               </button>

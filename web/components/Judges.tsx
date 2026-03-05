@@ -54,16 +54,17 @@ export default function Judges() {
         {/* Judging criteria */}
         <div className="mt-16 max-w-3xl mx-auto">
           <h3 className="text-xl font-bold mb-6 text-center">Judging Criteria</h3>
+          <p className="text-muted text-sm text-center mb-6">Submissions are scored on 100 points across five criteria</p>
           <div className="space-y-4">
             {[
-              { criterion: 'Innovation & Creativity', weight: '30%', desc: 'Novelty, pushes the frontier of agents + payments' },
-              { criterion: 'Technical Execution', weight: '25%', desc: 'Code quality, proper BSV stack usage, error handling' },
-              { criterion: 'Working Demo', weight: '20%', desc: 'Mandatory. Video or deployed app showing agents transacting' },
+              { criterion: 'Innovation & Creativity', weight: '30%', desc: 'Novelty, pushes the frontier of agents + payments.' },
+              { criterion: 'Technical Execution', weight: '25%', desc: 'Code quality, proper BSV stack usage, error handling.' },
+              { criterion: 'Working Demo', weight: '20%', desc: 'Mandatory. Video or deployed app showing agents transacting.' },
               { criterion: 'Real-World Applicability', weight: '15%', desc: 'Could this be a real product?' },
-              { criterion: 'Presentation & Clarity', weight: '10%', desc: 'README, architecture diagram, quick understandability' },
+              { criterion: 'Presentation & Clarity', weight: '10%', desc: 'README, architecture diagram, 5-min understandability.' },
             ].map((item) => (
               <div key={item.criterion} className="glass-card rounded-lg p-4 flex items-center gap-4">
-                <div className="text-2xl font-black text-primary font-mono w-14 text-right flex-shrink-0">
+                <div className="text-2xl font-black text-accent font-mono w-14 text-right flex-shrink-0">
                   {item.weight}
                 </div>
                 <div>

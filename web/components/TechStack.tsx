@@ -1,16 +1,22 @@
 export default function TechStack() {
   const tools = [
     {
+      name: '@bsv/sdk',
+      desc: 'Core JS/TS library for BSV developers. The foundation for building BSV applications.',
+      tag: 'npm install @bsv/sdk',
+      link: 'https://github.com/bsv-blockchain/ts-sdk',
+    },
+    {
       name: '@bsv/simple',
       desc: 'Modular library for BSV wallets, payments, tokens, credentials, messaging, and more.',
       tag: 'npm install @bsv/simple',
-      link: 'https://github.com/bitcoin-sv/ts-sdk',
+      link: 'https://github.com/bsv-blockchain/ts-sdk',
     },
     {
       name: 'simple-mcp',
       desc: 'MCP server for AI-assisted BSV development. 11 resources, 9 code-gen tools, 3 prompts.',
       tag: 'AI Assistant Integration',
-      link: 'https://github.com/MatiasJF/simple-mcp',
+      link: 'https://github.com/bsv-blockchain/simple-mcp',
     },
     {
       name: 'BSV Desktop Wallet',
@@ -21,7 +27,7 @@ export default function TechStack() {
     {
       name: 'Starter Templates',
       desc: 'Pre-built Next.js templates with wallet integration, agent loops, and MCP config.',
-      tag: 'Coming Mar 7',
+      tag: 'Coming Mar 20',
       link: '/resources',
     },
   ]
@@ -36,7 +42,7 @@ export default function TechStack() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {tools.map((tool) => (
             <a
               key={tool.name}
@@ -52,7 +58,7 @@ export default function TechStack() {
                 </svg>
               </div>
               <p className="text-sm text-muted mb-3">{tool.desc}</p>
-              <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-mono rounded-full">
+              <span className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-mono rounded-full">
                 {tool.tag}
               </span>
             </a>
@@ -61,7 +67,7 @@ export default function TechStack() {
 
         {/* Compatible tools */}
         <div className="mt-12 text-center">
-          <p className="text-sm text-muted mb-4">Vibe-code with whatever tools you love — we&apos;re agent-agnostic</p>
+          <p className="text-sm text-muted mb-4">Build with whatever AI tools you love — we&apos;re fully agent-agnostic</p>
           <div className="flex flex-wrap justify-center gap-4 text-sm font-mono text-muted">
             {['Claude Code', 'ChatGPT', 'Cursor', 'Windsurf', 'GitHub Copilot', 'Gemini', 'Open-Source LLMs', 'Any AI Tool'].map((tool) => (
               <span key={tool} className="px-4 py-2 rounded-lg border border-white/10 bg-white/5">

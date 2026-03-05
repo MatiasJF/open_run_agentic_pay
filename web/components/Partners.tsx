@@ -7,19 +7,15 @@ export default function Partners() {
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Partners</h2>
           <p className="text-muted text-lg max-w-2xl mx-auto">
-            AgentPay is powered by the BSV Blockchain Association and supported by leading organizations in AI and blockchain.
+            AgentPay Global Hackathon is powered by the BSV Association and supported by leading organizations in AI and blockchain.
           </p>
         </div>
 
         {/* Organizer */}
         <div className="text-center mb-16">
           <div className="text-sm font-mono text-accent mb-4 uppercase tracking-wider">Organized By</div>
-          <div className="inline-flex items-center gap-4 glass-card rounded-xl px-8 py-6">
-            <Image src="/logo_BSV.png" alt="BSV Blockchain" width={60} height={60} />
-            <div className="text-left">
-              <div className="font-bold text-lg">BSV Blockchain</div>
-              <div className="text-sm text-muted">Association</div>
-            </div>
+          <div className="glass-card rounded-xl px-8 py-6 inline-block">
+            <Image src="/openrun/logo-bsva-lockup-white.svg" alt="Open Run - powered by BSV Association" width={260} height={120} />
           </div>
         </div>
 
@@ -48,14 +44,14 @@ export default function Partners() {
 
         {/* Become a partner */}
         <div className="mt-16 text-center">
-          <div className="glass-card rounded-xl p-8 max-w-2xl mx-auto border-primary/20">
+          <div className="glass-card rounded-xl p-8 max-w-2xl mx-auto border-accent/20">
             <h3 className="text-xl font-bold mb-3">Become a Partner</h3>
             <p className="text-muted mb-6">
-              Support the next generation of AI agent developers. Platinum, Gold, Silver, and Community tiers available.
+              Support the next generation of AI agent developers. Community tiers available.
             </p>
             <a
               href="mailto:hackathon@bsvblockchain.org"
-              className="inline-block px-6 py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-colors"
+              className="inline-block px-6 py-3 bg-accent-warm hover:bg-accent-warm/80 text-white font-semibold rounded-lg transition-colors"
             >
               Partner With Us
             </a>

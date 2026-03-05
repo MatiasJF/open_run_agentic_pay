@@ -24,8 +24,8 @@ export default function About() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
         </svg>
       ),
-      title: 'Vibe-Code It',
-      description: 'Use any AI coding tool — Claude, ChatGPT, Cursor, Copilot, Windsurf, open-source LLMs, whatever fits your flow.',
+      title: 'AI-Powered Development',
+      description: 'The AI coding revolution is here. Use Claude, ChatGPT, Cursor, Copilot, Gemini, open-source models — whatever fits your flow. Fully agent-agnostic.',
     },
   ]
 
@@ -37,7 +37,7 @@ export default function About() {
             What is <span className="text-accent">AgentPay</span>?
           </h2>
           <p className="text-muted text-lg max-w-3xl mx-auto">
-            AgentPay is a global vibe-coding hackathon. Use whatever AI tools you love to build applications where AI agents autonomously exchange value using BSV blockchain micro-payments. Solo vibe-coders and teams of up to four — this is your chance to pioneer the future of machine-to-machine economies.
+            AgentPay Global Hackathon is an online global competition challenging developers to build applications where AI agents autonomously discover each other, negotiate, and exchange value through micro-payments. The hackathon is positioned as an AI-powered development event — fully agent-agnostic, meaning participants can use any AI coding tool they prefer. While AI-assisted development is encouraged, submissions will be judged on code quality, maintainability, and technical rigor. Solo developers and teams of up to four — this is your chance to pioneer machine-to-machine economies.
           </p>
         </div>
 
@@ -56,7 +56,7 @@ export default function About() {
           <h3 className="text-2xl font-bold mb-6 text-center">Who Should Participate?</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { label: 'Vibe-Coders', desc: 'Ship fast with your favorite AI tools' },
+              { label: 'AI-Powered Devs', desc: 'Ship fast with your favorite AI tools' },
               { label: 'AI/ML Engineers', desc: 'Building autonomous agent systems' },
               { label: 'Full-Stack Devs', desc: 'Shipping end-to-end applications' },
               { label: 'Blockchain Devs', desc: 'Exploring BSV micro-payments' },

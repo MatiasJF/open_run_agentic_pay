@@ -13,10 +13,10 @@ export default function ResourcesPage() {
             Back to Home
           </Link>
           <div className="flex items-center gap-4 mb-6">
-            <Image src="/agentpay-logo.svg" alt="AgentPay" width={120} height={32} />
+            <Image src="/openrun/logo-stacked-cyan.svg" alt="Open Run" width={120} height={32} />
           </div>
           <h1 className="text-3xl font-bold mb-2">Resources</h1>
-          <p className="text-muted">Everything you need to build your AgentPay project</p>
+          <p className="text-muted">Everything you need to build your AgentPay Global Hackathon project</p>
         </div>
 
         <div className="space-y-8">
@@ -24,7 +24,7 @@ export default function ResourcesPage() {
           <section>
             <h2 className="text-2xl font-bold mb-6">Core Tools</h2>
             <div className="grid sm:grid-cols-2 gap-4">
-              <a href="https://github.com/bitcoin-sv/ts-sdk" target="_blank" rel="noopener noreferrer"
+              <a href="https://github.com/bsv-blockchain/ts-sdk" target="_blank" rel="noopener noreferrer"
                 className="glass-card rounded-xl p-6 hover:border-accent/20 transition-all group">
                 <h3 className="text-lg font-bold mb-2 group-hover:text-accent transition-colors">@bsv/simple</h3>
                 <p className="text-sm text-muted mb-3">
@@ -33,7 +33,7 @@ export default function ResourcesPage() {
                 <code className="text-xs font-mono text-accent bg-accent/10 px-2 py-1 rounded">npm install @bsv/simple</code>
               </a>
 
-              <a href="https://github.com/MatiasJF/simple-mcp" target="_blank" rel="noopener noreferrer"
+              <a href="https://github.com/bsv-blockchain/simple-mcp" target="_blank" rel="noopener noreferrer"
                 className="glass-card rounded-xl p-6 hover:border-accent/20 transition-all group">
                 <h3 className="text-lg font-bold mb-2 group-hover:text-accent transition-colors">simple-mcp</h3>
                 <p className="text-sm text-muted mb-3">
@@ -56,7 +56,7 @@ export default function ResourcesPage() {
                 <p className="text-sm text-muted mb-3">
                   Pre-built Next.js templates with wallet integration, agent loops, and MCP config. Three levels of complexity.
                 </p>
-                <span className="inline-block text-xs font-mono text-accent-warm bg-accent-warm/10 px-2 py-1 rounded">Available March 7</span>
+                <span className="inline-block text-xs font-mono text-accent-warm bg-accent-warm/10 px-2 py-1 rounded">Available March 20</span>
               </div>
             </div>
           </section>
@@ -73,7 +73,7 @@ export default function ResourcesPage() {
                 <div>
                   <h4 className="font-semibold text-sm mb-2">1. Clone and build</h4>
                   <pre className="bg-dark-bg rounded-lg p-4 text-sm font-mono text-accent overflow-x-auto">
-{`git clone git@github.com:MatiasJF/simple-mcp.git
+{`git clone git@github.com:bsv-blockchain/simple-mcp.git
 cd simple-mcp
 npm install
 npm run build`}
@@ -200,7 +200,7 @@ console.log('Payment sent:', txid)`}
           {/* Starter Templates */}
           <section>
             <h2 className="text-2xl font-bold mb-6">Starter Templates</h2>
-            <p className="text-muted text-sm mb-4">Three template levels to get you started fast (available March 7):</p>
+            <p className="text-muted text-sm mb-4">Three template levels to get you started fast (available March 20):</p>
             <div className="grid sm:grid-cols-3 gap-4">
               {[
                 { name: 'Minimal', desc: 'Next.js + Tailwind + wallet connect + MCP config', level: 'Level 1' },
@@ -217,16 +217,16 @@ console.log('Payment sent:', txid)`}
           </section>
 
           {/* Help */}
-          <section className="glass-card rounded-xl p-6 sm:p-8 border-primary/20 text-center">
+          <section className="glass-card rounded-xl p-6 sm:p-8 border-accent/20 text-center">
             <h2 className="text-xl font-bold mb-3">Need Help?</h2>
             <p className="text-muted text-sm mb-4">
               Join the Discord server for technical support, team formation, and to connect with other participants.
             </p>
             <a
-              href="https://discord.gg/bsvblockchain"
+              href="https://discord.com/invite/bsv"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-colors"
+              className="inline-block px-6 py-3 bg-accent-warm hover:bg-accent-warm/80 text-white font-semibold rounded-lg transition-colors"
             >
               Join Discord
             </a>

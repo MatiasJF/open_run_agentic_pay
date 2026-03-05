@@ -1,8 +1,8 @@
 # AgentPay Global Hackathon
 
-**Build the future where AI agents pay each other.**
+**Vibe-code the future of autonomous AI payments.**
 
-A global hackathon by BSV Blockchain Association focused on agentic payments — AI agents autonomously making micro-payments on BSV to interoperate.
+A global hackathon by BSVA focused on agentic payments — AI agents autonomously making micro-payments on BSV to interoperate.
 
 ## Structure
 
@@ -33,9 +33,21 @@ npm run build  # Production build
 
 ## Key Dates
 
-- **Registration:** Feb 24 – Mar 13, 2026
-- **Hacking:** Mar 15 – 22, 2026
-- **Results:** Mar 28, 2026
+- **Campaign Start:** Mar 16, 2026
+- **Registration:** Mar 16 – 24, 2026
+- **Resources Live:** Mar 20, 2026
+- **Hackathon Day:** Mar 26, 2026 (24 hours — 10:00 UTC to 10:00 UTC)
+- **Submissions Due:** Mar 27, 2026 at 10:00 UTC
+- **Judging:** Mar 27 – 30, 2026
+- **Results:** Apr 2, 2026
+
+## Prize Pool — $15,000
+
+- Grand Prize: $5,000
+- Runner Up: $3,000
+- Best Solo Builder: $3,000
+- Most Innovative: $2,000
+- Best MCP Use: $2,000
 
 ## Hashtag
 

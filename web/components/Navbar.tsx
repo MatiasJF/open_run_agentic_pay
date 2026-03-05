@@ -22,7 +22,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/agentpay-logo.svg" alt="AgentPay" width={140} height={36} />
+            <Image src="/openrun/logo-linear-cyan.svg" alt="Open Run" width={160} height={40} />
           </Link>
 
           {/* Desktop nav */}
@@ -38,7 +38,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/register"
-              className="ml-2 px-5 py-2 bg-primary hover:bg-primary-dark text-white text-sm font-semibold rounded-lg transition-colors"
+              className="ml-2 px-5 py-2 bg-accent-warm hover:bg-accent-warm/80 text-white text-sm font-semibold rounded-lg transition-colors"
             >
               Register Now
             </Link>
@@ -77,7 +77,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/register"
-              className="block mt-4 px-5 py-2 bg-primary text-white text-center font-semibold rounded-lg"
+              className="block mt-4 px-5 py-2 bg-accent-warm text-white text-center font-semibold rounded-lg"
               onClick={() => setMobileOpen(false)}
             >
               Register Now

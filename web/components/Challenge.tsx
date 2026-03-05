@@ -1,7 +1,8 @@
 export default function Challenge() {
   const requirements = [
     'At least 2 AI agents with their own BSV wallets',
-    'Agents discover each other (identity registry, DIDs, or overlay)',
+    'At least 1.5M transactions on a 24-hour designated window for eligibility — transactions must be meaningful to the application\'s functionality',
+    'Agents discover each other using BRC-100 wallets and identity',
     'Agents transact autonomously (MessageBox P2P or direct payments)',
     'Solves a real, identifiable problem',
     'Human-facing web UI showing agent activity',
@@ -38,7 +39,7 @@ export default function Challenge() {
     <section id="challenge" className="section-padding bg-gradient-to-b from-dark-bg via-card-bg/30 to-dark-bg">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <div className="inline-block px-4 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-mono font-semibold mb-4">
+          <div className="inline-block px-4 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-mono font-semibold mb-4">
             SINGLE CHALLENGE
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">The Challenge</h2>
@@ -78,11 +79,27 @@ export default function Challenge() {
               { step: '03', title: 'Demo & Win', desc: 'Submit a working demo video showing your agents in action.' },
             ].map((item) => (
               <div key={item.step} className="glass-card rounded-xl p-6 text-center">
-                <div className="text-4xl font-black text-primary/30 font-mono mb-3">{item.step}</div>
+                <div className="text-4xl font-black text-accent/30 font-mono mb-3">{item.step}</div>
                 <h4 className="text-lg font-bold mb-2">{item.title}</h4>
                 <p className="text-sm text-muted">{item.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Think bigger callout */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <div className="glass-card rounded-xl p-6 sm:p-8 border-accent-warm/20 bg-accent-warm/5">
+            <h3 className="text-xl font-bold mb-3 text-accent-warm">Think Bigger, Not Smaller</h3>
+            <p className="text-muted text-sm mb-4">
+              We&apos;re not looking for toy demos. We want to see systems that could become real products and platforms — solutions that solve a problem for yourself, for your community, or for an industry.
+            </p>
+            <p className="text-muted text-sm mb-4">
+              Build with integration in mind. The best submissions won&apos;t just be a finished product — they&apos;ll be a <strong className="text-white">capability</strong> that others can build on top of, plug into, or extend. Think APIs, protocols, and composable agent architectures.
+            </p>
+            <p className="text-muted text-sm">
+              <strong className="text-white">Scale requirement:</strong> For eligibility, agents must demonstrate <strong className="text-accent">at least 1.5 million transactions recorded on-chain within a designated 24-hour window</strong>. Transactions must be meaningful to the application&apos;s functionality — artificial inflation will result in disqualification. This is BSV — we build at scale.
+            </p>
           </div>
         </div>
 

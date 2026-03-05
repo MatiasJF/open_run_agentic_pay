@@ -7,3 +7,8 @@ web/data/
 .DS_Store
 .env
 .env.local
+*.docx
+~$*.docx
+*.py
+OPEN_RUN_BRANDING/
+.claude/

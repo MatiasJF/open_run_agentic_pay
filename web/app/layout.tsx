@@ -1,21 +1,22 @@
 import type { Metadata } from 'next'
+import PasswordGate from '@/components/PasswordGate'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'AgentPay Global Hackathon | BSV Blockchain',
-  description: 'Build the future where AI agents pay each other. A global hackathon focused on agentic payments using BSV micro-transactions.',
-  keywords: ['AgentPay', 'hackathon', 'BSV', 'blockchain', 'AI agents', 'micro-payments', 'agentic payments'],
+  title: 'Open Run AgentPay | Powered by the BSV Association',
+  description: 'Build the future where AI agents pay each other. A global online hackathon challenging developers to build applications where AI agents autonomously discover, negotiate, and exchange value through BSV micro-payments.',
+  keywords: ['Open Run', 'AgentPay', 'Open Run AgentPay', 'hackathon', 'BSV', 'blockchain', 'AI agents', 'micro-payments', 'agentic payments', 'BSV Association'],
   icons: {
     icon: '/favicon.svg',
   },
   openGraph: {
-    title: 'AgentPay Global Hackathon',
+    title: 'Open Run AgentPay | Powered by the BSV Association',
     description: 'Build the future where AI agents pay each other.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AgentPay Global Hackathon',
+    title: 'Open Run AgentPay | Powered by the BSV Association',
     description: 'Build the future where AI agents pay each other.',
   },
 }
@@ -31,12 +32,12 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
       </head>
       <body className="font-sans">
-        {children}
+        <PasswordGate>{children}</PasswordGate>
       </body>
     </html>
   )

@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: 'Can I participate solo?',
-    a: 'Absolutely! Solo vibe-coders are first-class citizens. Grab your favorite AI coding tool and start building. Many great projects come from solo builders who let AI handle the heavy lifting.',
+    a: 'Absolutely! Solo developers using AI coding assistants are treated as first-class participants — this is not a team-only event. Grab your favorite AI coding tool and start building.',
   },
   {
     q: 'What counts as a "working demo"?',
@@ -37,7 +37,11 @@ const faqs = [
   },
   {
     q: 'When will prize amounts be announced?',
-    a: 'Prize amounts will be confirmed as partner contributions are finalized. Follow #AgentPay on X for announcements.',
+    a: 'Prize amounts will scale with partner contributions. Follow #AgentPay on X for announcements. Prizes may be awarded in BSV or fiat at the organizer\'s discretion.',
+  },
+  {
+    q: 'Can the hackathon be cancelled?',
+    a: 'The hackathon may be turned down if too few teams register. We need a minimum number of participants to ensure a competitive and meaningful event. Register early and spread the word to help make it happen!',
   },
 ]
 

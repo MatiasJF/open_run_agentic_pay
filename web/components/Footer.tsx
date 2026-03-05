@@ -8,9 +8,9 @@ export default function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <Image src="/agentpay-logo.svg" alt="AgentPay" width={120} height={32} className="mb-4" />
+            <Image src="/openrun/logo-linear-cyan.svg" alt="Open Run" width={140} height={36} className="mb-4" />
             <p className="text-sm text-muted">
-              A global hackathon by BSV Blockchain Association.
+              Powered by the BSV Association.
             </p>
             <div className="flex gap-4 mt-4">
               <a href="https://x.com/BSVBlockchain" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors">
@@ -40,7 +40,7 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Resources</h4>
             <div className="space-y-2 text-sm">
               <Link href="/resources" className="block text-muted hover:text-white transition-colors">Documentation</Link>
-              <a href="https://github.com/bitcoin-sv/ts-sdk" target="_blank" rel="noopener noreferrer" className="block text-muted hover:text-white transition-colors">@bsv/simple</a>
+              <a href="https://github.com/bsv-blockchain/ts-sdk" target="_blank" rel="noopener noreferrer" className="block text-muted hover:text-white transition-colors">@bsv/simple</a>
               <a href="https://desktop.bsvb.tech" target="_blank" rel="noopener noreferrer" className="block text-muted hover:text-white transition-colors">Desktop Wallet</a>
               <a href="#faq" className="block text-muted hover:text-white transition-colors">FAQ</a>
             </div>
@@ -58,7 +58,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted">
-            &copy; 2026 BSV Blockchain Association. All rights reserved.
+            &copy; 2026 BSV Association. All rights reserved.
           </p>
           <p className="text-sm text-muted">
             #AgentPay

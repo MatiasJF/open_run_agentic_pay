@@ -1,50 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { writeFile, readFile, mkdir } from 'fs/promises'
-import { join } from 'path'
-
-const DATA_DIR = join(process.cwd(), 'data')
-const REGISTRATIONS_FILE = join(DATA_DIR, 'registrations.json')
-
-interface Registration {
-  id: string
-  timestamp: string
-  name: string
-  email: string
-  country: string
-  github: string
-  xHandle: string
-  discord: string
-  devLevel: string
-  bsvExperience: string
-  aiTool: string
-  primaryLanguage: string
-  teamPreference: string
-  teamName: string
-  teamCode: string
-  lookingForTeam: boolean
-  acceptRules: boolean
-  acceptCoC: boolean
-  emailConsent: boolean
-  partnerDataSharing: boolean
-}
-
-async function loadRegistrations(): Promise<Registration[]> {
-  try {
-    const data = await readFile(REGISTRATIONS_FILE, 'utf-8')
-    return JSON.parse(data)
-  } catch {
-    return []
-  }
-}
-
-async function saveRegistrations(registrations: Registration[]): Promise<void> {
-  await mkdir(DATA_DIR, { recursive: true })
-  await writeFile(REGISTRATIONS_FILE, JSON.stringify(registrations, null, 2))
-}
+import db from '@/lib/db'
+import { generateInviteCode } from '@/lib/invite-code'
+import type { RegistrationInput } from '@/lib/types'
+import {
+  sendRegistrationConfirmation,
+  sendTeamCreatedEmail,
+  sendTeamJoinNotification,
+} from '@/lib/email'
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json()
+    const body: RegistrationInput = await request.json()
 
     // Validate required fields
     if (!body.name || !body.email || !body.country) {
@@ -53,43 +19,115 @@ export async function POST(request: NextRequest) {
     if (!body.acceptRules || !body.acceptCoC) {
       return NextResponse.json({ error: 'You must accept the rules and code of conduct' }, { status: 400 })
     }
-
-    // Check for duplicate email
-    const registrations = await loadRegistrations()
-    if (registrations.some((r) => r.email.toLowerCase() === body.email.toLowerCase())) {
-      return NextResponse.json({ error: 'This email is already registered' }, { status: 409 })
+    if (body.teamPreference === 'create' && !body.teamName?.trim()) {
+      return NextResponse.json({ error: 'Team name is required when creating a team' }, { status: 400 })
+    }
+    if (body.teamPreference === 'join' && (!body.teamCode || body.teamCode.length !== 6)) {
+      return NextResponse.json({ error: 'A valid 6-character invite code is required to join a team' }, { status: 400 })
     }
 
-    const registration: Registration = {
-      id: crypto.randomUUID(),
-      timestamp: new Date().toISOString(),
-      name: body.name,
-      email: body.email,
-      country: body.country,
-      github: body.github || '',
-      xHandle: body.xHandle || '',
-      discord: body.discord || '',
-      devLevel: body.devLevel || '',
-      bsvExperience: body.bsvExperience || '',
-      aiTool: body.aiTool || '',
-      primaryLanguage: body.primaryLanguage || '',
-      teamPreference: body.teamPreference || 'solo',
-      teamName: body.teamName || '',
-      teamCode: body.teamCode || '',
-      lookingForTeam: body.lookingForTeam || false,
-      acceptRules: body.acceptRules,
-      acceptCoC: body.acceptCoC,
-      emailConsent: body.emailConsent || false,
-      partnerDataSharing: body.partnerDataSharing || false,
+    const registrationId = crypto.randomUUID()
+    const timestamp = new Date().toISOString()
+    let teamInviteCode: string | undefined
+    let teamName: string | undefined
+
+    const registerTransaction = db.transaction(() => {
+      // Insert registration
+      db.prepare(`
+        INSERT INTO registrations (
+          id, timestamp, name, email, country, github, x_handle, discord,
+          dev_level, bsv_experience, ai_tool, primary_language,
+          team_preference, looking_for_team, accept_rules, accept_coc,
+          email_consent, partner_data_sharing
+        ) VALUES (
+          ?, ?, ?, ?, ?, ?, ?, ?,
+          ?, ?, ?, ?,
+          ?, ?, ?, ?,
+          ?, ?
+        )
+      `).run(
+        registrationId, timestamp, body.name, body.email, body.country,
+        body.github || '', body.xHandle || '', body.discord || '',
+        body.devLevel || '', body.bsvExperience || '', body.aiTool || '', body.primaryLanguage || '',
+        body.teamPreference || 'solo', body.lookingForTeam ? 1 : 0,
+        body.acceptRules ? 1 : 0, body.acceptCoC ? 1 : 0,
+        body.emailConsent ? 1 : 0, body.partnerDataSharing ? 1 : 0
+      )
+
+      // Handle team creation
+      if (body.teamPreference === 'create') {
+        // Generate a unique invite code
+        let code: string
+        const checkCode = db.prepare('SELECT 1 FROM teams WHERE invite_code = ?')
+        do {
+          code = generateInviteCode()
+        } while (checkCode.get(code))
+
+        db.prepare(`
+          INSERT INTO teams (name, invite_code, created_by, created_at)
+          VALUES (?, ?, ?, ?)
+        `).run(body.teamName!.trim(), code, registrationId, timestamp)
+
+        const team = db.prepare('SELECT id FROM teams WHERE invite_code = ?').get(code) as { id: number }
+        db.prepare('INSERT INTO team_members (team_id, registration_id) VALUES (?, ?)').run(team.id, registrationId)
+
+        teamInviteCode = code
+        teamName = body.teamName!.trim()
+      }
+
+      // Handle joining a team
+      if (body.teamPreference === 'join') {
+        const code = body.teamCode!.toUpperCase()
+        const team = db.prepare('SELECT id, name FROM teams WHERE invite_code = ?').get(code) as { id: number; name: string } | undefined
+
+        if (!team) {
+          throw new Error('INVALID_CODE')
+        }
+
+        const memberCount = db.prepare('SELECT COUNT(*) as count FROM team_members WHERE team_id = ?').get(team.id) as { count: number }
+        if (memberCount.count >= 4) {
+          throw new Error('TEAM_FULL')
+        }
+
+        db.prepare('INSERT INTO team_members (team_id, registration_id) VALUES (?, ?)').run(team.id, registrationId)
+        teamName = team.name
+        teamInviteCode = code
+      }
+    })
+
+    try {
+      registerTransaction()
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : ''
+      if (message === 'INVALID_CODE') {
+        return NextResponse.json({ error: 'Invalid invite code. Please check and try again.' }, { status: 400 })
+      }
+      if (message === 'TEAM_FULL') {
+        return NextResponse.json({ error: 'This team is already full (max 4 members).' }, { status: 400 })
+      }
+      if (message.includes('UNIQUE constraint failed: registrations.email')) {
+        return NextResponse.json({ error: 'This email is already registered' }, { status: 409 })
+      }
+      throw err
     }
 
-    registrations.push(registration)
-    await saveRegistrations(registrations)
+    // Fire-and-forget emails
+    sendRegistrationConfirmation(body.name, body.email).catch(console.error)
+
+    if (body.teamPreference === 'create' && teamInviteCode && teamName) {
+      sendTeamCreatedEmail(body.name, body.email, teamName, teamInviteCode).catch(console.error)
+    }
+
+    if (body.teamPreference === 'join' && teamInviteCode) {
+      sendTeamJoinNotification(registrationId, teamInviteCode).catch(console.error)
+    }
 
     return NextResponse.json({
       success: true,
-      id: registration.id,
-      message: `Welcome to AgentPay, ${registration.name}!`,
+      id: registrationId,
+      message: `Welcome to Open Run AgentPay, ${body.name}!`,
+      ...(teamInviteCode && { teamInviteCode }),
+      ...(teamName && { teamName }),
     })
   } catch {
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
@@ -97,17 +135,21 @@ export async function POST(request: NextRequest) {
 }
 
 export async function GET() {
-  const registrations = await loadRegistrations()
+  const registrations = db.prepare(`
+    SELECT country, team_preference FROM registrations
+  `).all() as { country: string; team_preference: string }[]
+
+  const byCountry: Record<string, number> = {}
+  const byTeamPreference: Record<string, number> = {}
+
+  for (const r of registrations) {
+    byCountry[r.country] = (byCountry[r.country] || 0) + 1
+    byTeamPreference[r.team_preference] = (byTeamPreference[r.team_preference] || 0) + 1
+  }
+
   return NextResponse.json({
     count: registrations.length,
-    // Only expose non-sensitive aggregate data
-    byCountry: registrations.reduce((acc, r) => {
-      acc[r.country] = (acc[r.country] || 0) + 1
-      return acc
-    }, {} as Record<string, number>),
-    byTeamPreference: registrations.reduce((acc, r) => {
-      acc[r.teamPreference] = (acc[r.teamPreference] || 0) + 1
-      return acc
-    }, {} as Record<string, number>),
+    byCountry,
+    byTeamPreference,
   })
 }
