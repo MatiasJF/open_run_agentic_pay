@@ -3,20 +3,20 @@ import PasswordGate from '@/components/PasswordGate'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Open Run AgentPay | Powered by the BSV Association',
+  title: 'Open Run Agentic Pay | Powered by the BSV Association',
   description: 'Build the future where AI agents pay each other. A global online hackathon challenging developers to build applications where AI agents autonomously discover, negotiate, and exchange value through BSV micro-payments.',
-  keywords: ['Open Run', 'AgentPay', 'Open Run AgentPay', 'hackathon', 'BSV', 'blockchain', 'AI agents', 'micro-payments', 'agentic payments', 'BSV Association'],
+  keywords: ['Open Run', 'Agentic Pay', 'Open Run Agentic Pay', 'hackathon', 'BSV', 'blockchain', 'AI agents', 'micro-payments', 'agentic payments', 'BSV Association'],
   icons: {
     icon: '/favicon.svg',
   },
   openGraph: {
-    title: 'Open Run AgentPay | Powered by the BSV Association',
+    title: 'Open Run Agentic Pay | Powered by the BSV Association',
     description: 'Build the future where AI agents pay each other.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Open Run AgentPay | Powered by the BSV Association',
+    title: 'Open Run Agentic Pay | Powered by the BSV Association',
     description: 'Build the future where AI agents pay each other.',
   },
 }

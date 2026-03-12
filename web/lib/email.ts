@@ -2,7 +2,7 @@ import { Resend } from 'resend'
 import db from './db'
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
-const FROM = process.env.RESEND_FROM_EMAIL || 'Open Run AgentPay <hackathon@bsvblockchain.org>'
+const FROM = process.env.RESEND_FROM_EMAIL || 'Open Run Agentic Pay <hackathon@bsvblockchain.org>'
 
 function canSend(): boolean {
   return resend !== null
@@ -14,11 +14,11 @@ export async function sendRegistrationConfirmation(name: string, email: string) 
   await resend!.emails.send({
     from: FROM,
     to: email,
-    subject: 'Welcome to AgentPay Global Hackathon!',
+    subject: 'Welcome to Open Run Agentic Pay!',
     html: `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
         <h1 style="color: #2D5BFF;">You're registered, ${name}!</h1>
-        <p>Thank you for signing up for the <strong>AgentPay Global Hackathon</strong> by Open Run.</p>
+        <p>Thank you for signing up for the <strong>Open Run Agentic Pay</strong> by Open Run.</p>
         <h3>Key Dates</h3>
         <ul>
           <li><strong>Registration closes:</strong> March 25, 2026</li>

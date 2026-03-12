@@ -139,7 +139,7 @@ export default function RegisterPage() {
           <div className="text-6xl mb-6">&#10003;</div>
           <h1 className="text-3xl font-bold mb-4">You&apos;re Registered!</h1>
           <p className="text-muted mb-2">
-            Welcome to Open Run AgentPay, <span className="text-white font-semibold">{form.name}</span>.
+            Welcome to Open Run Agentic Pay, <span className="text-white font-semibold">{form.name}</span>.
           </p>
           <p className="text-muted mb-8">
             We&apos;ll send event details and resources to <span className="text-accent">{form.email}</span>.
@@ -182,7 +182,7 @@ export default function RegisterPage() {
             <Image src="/openrun/logo-stacked-cyan.svg" alt="Open Run" width={140} height={36} className="mx-auto mb-6" />
           </Link>
           <h1 className="text-3xl font-bold mb-2">Register</h1>
-          <p className="text-muted">Join Open Run AgentPay</p>
+          <p className="text-muted">Join Open Run Agentic Pay</p>
         </div>
 
         {/* Step indicator */}
@@ -388,8 +388,8 @@ export default function RegisterPage() {
                     className="w-4 h-4 mt-0.5 rounded border-white/20 bg-dark-bg text-accent focus:ring-accent" />
                   <span className="text-sm">
                     I have read and agree to the{' '}
-                    <Link href="/rules" className="text-accent hover:underline" target="_blank">
-                      Hackathon Rules
+                    <Link href="/terms" className="text-accent hover:underline" target="_blank">
+                      Terms and Conditions
                     </Link>{' '}*
                   </span>
                 </label>
@@ -399,7 +399,7 @@ export default function RegisterPage() {
                     className="w-4 h-4 mt-0.5 rounded border-white/20 bg-dark-bg text-accent focus:ring-accent" />
                   <span className="text-sm">
                     I agree to the{' '}
-                    <Link href="/rules#code-of-conduct" className="text-accent hover:underline" target="_blank">
+                    <Link href="/terms#code-of-conduct" className="text-accent hover:underline" target="_blank">
                       Code of Conduct
                     </Link>{' '}*
                   </span>

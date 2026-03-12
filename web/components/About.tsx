@@ -34,10 +34,10 @@ export default function About() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            What is <span className="text-accent">AgentPay</span>?
+            What is <span className="text-accent">Agentic Pay</span>?
           </h2>
           <p className="text-muted text-lg max-w-3xl mx-auto">
-            Open Run AgentPay is an online global competition challenging developers to build applications where AI agents autonomously discover each other, negotiate, and exchange value through micro-payments. The hackathon is positioned as an AI-powered development event — fully agent-agnostic, meaning participants can use any AI coding tool they prefer. While AI-assisted development is encouraged, submissions will be judged on code quality, maintainability, and technical rigor. Solo developers and teams of up to four — this is your chance to pioneer machine-to-machine economies.
+            Open Run Agentic Pay is an online global competition challenging developers to build applications where AI agents autonomously discover each other, negotiate, and exchange value through micro-payments. The hackathon is positioned as an AI-powered development event — fully agent-agnostic, meaning participants can use any AI coding tool they prefer. While AI-assisted development is encouraged, submissions will be judged on code quality, maintainability, and technical rigor. Solo developers and teams of up to four — this is your chance to pioneer machine-to-machine economies.
           </p>
         </div>
 

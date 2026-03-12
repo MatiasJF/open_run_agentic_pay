@@ -13,7 +13,7 @@ export default function Footer() {
               Powered by the BSV Association.
             </p>
             <div className="flex gap-4 mt-4">
-              <a href="https://x.com/BSVBlockchain" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors">
+              <a href="https://x.com/BSVAssociation" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
               </a>
               <a href="https://github.com/bsv-blockchain" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors">
@@ -32,7 +32,7 @@ export default function Footer() {
               <a href="#challenge" className="block text-muted hover:text-white transition-colors">Challenge</a>
               <a href="#prizes" className="block text-muted hover:text-white transition-colors">Prizes</a>
               <a href="#timeline" className="block text-muted hover:text-white transition-colors">Timeline</a>
-              <Link href="/rules" className="block text-muted hover:text-white transition-colors">Rules</Link>
+              <Link href="/terms" className="block text-muted hover:text-white transition-colors">Terms &amp; Conditions</Link>
             </div>
           </div>
 
@@ -40,7 +40,7 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Resources</h4>
             <div className="space-y-2 text-sm">
               <Link href="/resources" className="block text-muted hover:text-white transition-colors">Documentation</Link>
-              <a href="https://github.com/bsv-blockchain/ts-sdk" target="_blank" rel="noopener noreferrer" className="block text-muted hover:text-white transition-colors">@bsv/simple</a>
+              <a href="https://www.npmjs.com/package/@bsv/simple" target="_blank" rel="noopener noreferrer" className="block text-muted hover:text-white transition-colors">@bsv/simple</a>
               <a href="https://desktop.bsvb.tech" target="_blank" rel="noopener noreferrer" className="block text-muted hover:text-white transition-colors">Desktop Wallet</a>
               <a href="#faq" className="block text-muted hover:text-white transition-colors">FAQ</a>
             </div>
@@ -51,7 +51,7 @@ export default function Footer() {
             <div className="space-y-2 text-sm">
               <a href="mailto:hackathon@bsvblockchain.org" className="block text-muted hover:text-white transition-colors">hackathon@bsvblockchain.org</a>
               <a href="https://discord.com/invite/bsv" target="_blank" rel="noopener noreferrer" className="block text-muted hover:text-white transition-colors">Discord Server</a>
-              <a href="https://x.com/BSVBlockchain" target="_blank" rel="noopener noreferrer" className="block text-muted hover:text-white transition-colors">@BSVBlockchain on X</a>
+              <a href="https://x.com/BSVAssociation" target="_blank" rel="noopener noreferrer" className="block text-muted hover:text-white transition-colors">@BSVAssociation on X</a>
             </div>
           </div>
         </div>
@@ -61,7 +61,7 @@ export default function Footer() {
             &copy; 2026 BSV Association. All rights reserved.
           </p>
           <p className="text-sm text-muted">
-            #AgentPay
+            #AgenticPay
           </p>
         </div>
       </div>

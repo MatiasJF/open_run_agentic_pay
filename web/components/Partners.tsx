@@ -7,7 +7,7 @@ export default function Partners() {
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Partners</h2>
           <p className="text-muted text-lg max-w-2xl mx-auto">
-            Open Run AgentPay is powered by the BSV Association and supported by community partner ESBC.
+            Open Run Agentic Pay is powered by the BSV Association and supported by community partner ESBC.
           </p>
         </div>
 
@@ -15,7 +15,7 @@ export default function Partners() {
         <div className="text-center mb-16">
           <div className="text-sm font-mono text-accent mb-4 uppercase tracking-wider">Organized By</div>
           <div className="glass-card rounded-xl px-8 py-6 inline-block">
-            <Image src="/openrun/logo-bsva-lockup-white.svg" alt="Open Run - powered by BSV Association" width={260} height={120} />
+            <Image src="/openrun/logo-bsva-lockup-white.svg" alt="Open Run - powered by BSV Association" width={360} height={160} />
           </div>
         </div>
 
@@ -35,8 +35,8 @@ export default function Partners() {
                 rel="noopener noreferrer"
                 className="glass-card rounded-lg px-6 py-4 flex items-center gap-3 hover:border-accent/20 transition-all"
               >
-                <Image src="/partners/esbc.jpeg" alt="ESBC" width={64} height={64} className="rounded" />
-                <span className="text-lg font-bold">ESBC</span>
+                <Image src="/partners/esbc.jpeg" alt="ESBC" width={100} height={100} className="rounded-lg" />
+                <span className="text-2xl font-bold">ESBC</span>
               </a>
             </div>
           </div>

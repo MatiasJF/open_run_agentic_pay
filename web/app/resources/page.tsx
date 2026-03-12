@@ -16,7 +16,7 @@ export default function ResourcesPage() {
             <Image src="/openrun/logo-stacked-cyan.svg" alt="Open Run" width={120} height={32} />
           </div>
           <h1 className="text-3xl font-bold mb-2">Resources</h1>
-          <p className="text-muted">Everything you need to build your Open Run AgentPay project</p>
+          <p className="text-muted">Everything you need to build your Open Run Agentic Pay project</p>
         </div>
 
         <div className="space-y-8">
@@ -69,7 +69,7 @@ export default function ResourcesPage() {
               {[
                 {
                   title: 'Agent Wallets',
-                  desc: 'Each AI agent needs its own BSV wallet (server-side). Use @bsv/wallet-toolbox for backend wallets with SQLite storage.',
+                  desc: 'Each AI agent needs its own BSV wallet (server-side). Use @bsv/simple/server for backend wallets.',
                 },
                 {
                   title: 'P2P Messaging',

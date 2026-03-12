@@ -23,7 +23,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center gap-3">
             <Image src="/openrun/logo-linear-cyan.svg" alt="Open Run" width={160} height={40} />
-            <span className="text-2xl font-bold text-white border-l border-white/20 pl-3 leading-none">AgentPay</span>
+            <span className="text-2xl font-bold text-white border-l border-white/20 pl-3 leading-none">Agentic Pay</span>
           </Link>
 
           {/* Desktop nav */}

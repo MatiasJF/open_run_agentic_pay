@@ -125,7 +125,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: true,
       id: registrationId,
-      message: `Welcome to Open Run AgentPay, ${body.name}!`,
+      message: `Welcome to Open Run Agentic Pay, ${body.name}!`,
       ...(teamInviteCode && { teamInviteCode }),
       ...(teamName && { teamName }),
     })
