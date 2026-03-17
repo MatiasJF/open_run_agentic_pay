@@ -6,7 +6,7 @@ export default function ThankYouPage() {
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="max-w-md w-full text-center">
         <Link href="/">
-          <Image src="/openrun/logo-stacked-cyan.svg" alt="Open Run" width={140} height={36} className="mx-auto mb-8" />
+          <Image src="/openrun_logo.svg" alt="Open Run" width={140} height={36} className="mx-auto mb-8" />
         </Link>
         <div className="text-6xl mb-6">&#10003;</div>
         <h1 className="text-3xl font-bold mb-4">You&apos;re Registered!</h1>

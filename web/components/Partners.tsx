@@ -13,9 +13,10 @@ export default function Partners() {
 
         {/* Organizer */}
         <div className="text-center mb-16">
-          <div className="text-sm font-mono text-accent mb-4 uppercase tracking-wider">Organized By</div>
-          <div className="glass-card rounded-xl px-8 py-6 inline-block">
-            <Image src="/openrun/logo-bsva-lockup-white.svg" alt="Open Run - powered by BSV Association" width={360} height={160} />
+          <div className="text-sm font-mono text-accent mb-4 uppercase tracking-wider">Powered By</div>
+          <div className="glass-card rounded-xl px-8 py-8 inline-block text-center">
+            <Image src="/openrun_logo.svg" alt="Open Run Agentic Pay" width={360} height={160} className="mx-auto mb-4" />
+            <p className="text-lg font-semibold text-white">BSV Association</p>
           </div>
         </div>
 

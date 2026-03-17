@@ -34,7 +34,7 @@ export default function PasswordGate({ children }: { children: React.ReactNode }
     <div className="min-h-screen flex items-center justify-center px-4 bg-dark-bg">
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-accent/15 rounded-full blur-[128px]" />
       <div className="relative z-10 w-full max-w-sm text-center">
-        <Image src="/openrun/logo-stacked-cyan.svg" alt="Open Run" width={180} height={120} className="mx-auto mb-8" />
+        <Image src="/openrun_logo.svg" alt="Open Run" width={180} height={120} className="mx-auto mb-8" />
         <p className="text-muted text-sm mb-6">This site is currently in preview. Enter the password to continue.</p>
         <form onSubmit={handleSubmit}>
           <input

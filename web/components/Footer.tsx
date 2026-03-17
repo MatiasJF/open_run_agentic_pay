@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <Image src="/openrun/logo-linear-cyan.svg" alt="Open Run" width={140} height={36} className="mb-4" />
+            <Image src="/openrun_logo.svg" alt="Open Run" width={140} height={36} className="mb-4" />
             <p className="text-sm text-muted">
               Powered by the BSV Association.
             </p>

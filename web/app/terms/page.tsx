@@ -13,7 +13,7 @@ export default function TermsPage() {
             Back to Home
           </Link>
           <div className="flex items-center gap-4 mb-6">
-            <Image src="/openrun/logo-stacked-cyan.svg" alt="Open Run" width={120} height={32} />
+            <Image src="/openrun_logo.svg" alt="Open Run" width={120} height={32} />
           </div>
           <h1 className="text-3xl font-bold mb-2">Terms and Conditions</h1>
           <p className="text-muted">Open Run Agentic Pay 2026 &mdash; Rules and Regulations</p>

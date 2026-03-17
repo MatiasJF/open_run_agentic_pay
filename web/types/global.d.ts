@@ -5,6 +5,9 @@ interface HbsptForms {
     region?: string
     target?: string
     redirectUrl?: string
+    cssRequired?: string
+    onFormReady?: () => void
+    onFormSubmitted?: () => void
   }): void
 }
 

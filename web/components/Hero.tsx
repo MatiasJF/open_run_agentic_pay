@@ -29,7 +29,7 @@ export default function Hero() {
         {/* Open Run Logo */}
         <div className="">
           <Image
-            src="/openrun/logo-stacked-cyan.svg"
+            src="/openrun_logo.svg"
             alt="Open Run"
             width={280}
             height={200}
