@@ -20,6 +20,7 @@ export default function RegisterPage() {
           formId: '9352ccea-8572-4bf5-a526-67fa6533e48a',
           region: 'na1',
           target: '#hubspot-form',
+          redirectUrl: window.location.origin + '/register/thank-you',
         })
       }
     }

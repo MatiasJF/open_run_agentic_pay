@@ -4,6 +4,7 @@ interface HbsptForms {
     formId: string
     region?: string
     target?: string
+    redirectUrl?: string
   }): void
 }
 
