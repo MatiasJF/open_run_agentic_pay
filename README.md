@@ -1,4 +1,4 @@
-# AgentPay Global Hackathon
+# Open Run AgentPay
 
 **Vibe-code the future of autonomous AI payments.**
 
