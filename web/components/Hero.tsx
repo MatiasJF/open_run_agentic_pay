@@ -53,15 +53,15 @@ export default function Hero() {
         <div className="flex flex-wrap justify-center gap-6 mb-10 font-mono">
           <div className="glass-card rounded-lg px-6 py-4">
             <div className="text-accent font-bold text-sm sm:text-base tracking-wide">REGISTRATION</div>
-            <div className="text-white text-xl sm:text-2xl font-bold">Mar 16 &ndash; 25</div>
+            <div className="text-white text-xl sm:text-2xl font-bold">Mar 23 &ndash; Apr 3</div>
           </div>
           <div className="glass-card rounded-lg px-6 py-4">
             <div className="text-accent font-bold text-sm sm:text-base tracking-wide">HACKATHON</div>
-            <div className="text-white text-xl sm:text-2xl font-bold">Mar 26 &ndash; Apr 9</div>
+            <div className="text-white text-xl sm:text-2xl font-bold">Apr 6 &ndash; 17</div>
           </div>
           <div className="glass-card rounded-lg px-6 py-4">
             <div className="text-accent font-bold text-sm sm:text-base tracking-wide">RESULTS</div>
-            <div className="text-white text-xl sm:text-2xl font-bold">Apr 15</div>
+            <div className="text-white text-xl sm:text-2xl font-bold">Apr 23</div>
           </div>
         </div>
 

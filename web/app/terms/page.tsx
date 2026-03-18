@@ -46,7 +46,7 @@ export default function TermsPage() {
           <section className="glass-card rounded-xl p-6 sm:p-8">
             <h2 className="text-xl font-bold mb-4">&sect;2 Definitions</h2>
             <ol className="space-y-4 text-muted text-sm list-decimal list-inside">
-              <li><strong className="text-white">Event</strong> &ndash; Open Run Agentic Pay hackathon event organised by the Organiser, which will take place between March 16, 2026 through April 15, 2026 in an online form. The Event is global and open to participants worldwide.</li>
+              <li><strong className="text-white">Event</strong> &ndash; Open Run Agentic Pay hackathon event organised by the Organiser, which will take place between March 23, 2026 through April 23, 2026 in an online form. The Event is global and open to participants worldwide.</li>
               <li><strong className="text-white">Organiser</strong> &ndash; BSV Association. The BSV Association is a Switzerland-based non-profit organisation that serves as the global advocate for the BSV blockchain. Its mission is to advance adoption and unlock the full potential of BSV as a scalable, secure, energy-efficient public blockchain built for data integrity, enterprise solutions, and government applications. The BSV Association supports developers, enterprises, and public sector institutions by fostering innovation, encouraging regulatory compliance, and promoting real-world use cases that demonstrate blockchain&apos;s value on a global scale. Through education, developer engagement, strategic partnerships, public policy initiatives, and technological advancement, the BSV Association is committed to driving sustainable growth and long-term utility of blockchain technology.</li>
               <li><strong className="text-white">Participant</strong> &ndash; A person participating in the Event, who meets the conditions of participation specified in &sect;3 of this document.</li>
               <li><strong className="text-white">Mentors</strong> &ndash; Individuals with knowledge and experience in the fields of business, blockchain technology, and artificial intelligence. The role of mentors during the Event is to support Participants with their knowledge and experience and provide advice to teams.</li>
@@ -64,7 +64,7 @@ export default function TermsPage() {
             <h2 className="text-xl font-bold mb-4">&sect;3 Conditions of Participation in the Event</h2>
             <ol className="space-y-3 text-muted text-sm list-decimal list-inside">
               <li>Participants must be above the age of majority in the country, state, province, or jurisdiction in which they reside at the time of entry.</li>
-              <li>To participate in the Event, you must register using the form available on the Website. Registration is open from March 16, 2026 to March 25, 2026. Both registration and participation in the Event are free of charge.</li>
+              <li>To participate in the Event, you must register using the form available on the Website. Registration is open from March 23, 2026 to April 3, 2026. Both registration and participation in the Event are free of charge.</li>
               <li>All team members must register individually. Each Participant may only be part of one team or submission.</li>
               <li>Participation is not permitted for individuals or entities that are subject to United States export controls, trade sanctions, or other restricted party designations.</li>
               <li>Each participant represents and warrants that they are not a Restricted Person. For the purposes of these Rules, a Restricted Person means any individual or entity that: appears on any U.S. government restricted or sanctioned party list, including but not limited to the U.S. Treasury Department&apos;s Specially Designated Nationals (SDN) List or the U.S. Commerce Department&apos;s Denied Persons List, is located, organised, or ordinarily resident in a country or territory subject to comprehensive U.S. sanctions, or is otherwise prohibited from receiving goods, technology, services, or payments under applicable U.S. export control or sanctions laws.</li>
@@ -114,15 +114,15 @@ export default function TermsPage() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/5">
-                  <tr><td className="py-2 pr-4 font-mono text-xs">Mar 16, 2026</td><td className="py-2 pr-4">Registration Opens</td><td className="py-2">Website live, announcement across all channels.</td></tr>
-                  <tr><td className="py-2 pr-4 font-mono text-xs">Mar 16 &ndash; 25</td><td className="py-2 pr-4">Registration Period</td><td className="py-2">10 days of sign-ups and marketing push.</td></tr>
-                  <tr><td className="py-2 pr-4 font-mono text-xs">Mar 20, 2026</td><td className="py-2 pr-4">Resources Published</td><td className="py-2">Documentation guides released.</td></tr>
-                  <tr><td className="py-2 pr-4 font-mono text-xs">Mar 25, 2026</td><td className="py-2 pr-4">Registration Closes</td><td className="py-2">Last day to sign up. Onboarding email sent.</td></tr>
-                  <tr><td className="py-2 pr-4 font-mono text-xs">Mar 26, 10:00 UTC</td><td className="py-2 pr-4">Hacking Begins</td><td className="py-2">14-day hacking period starts.</td></tr>
-                  <tr><td className="py-2 pr-4 font-mono text-xs">Mar 26 &ndash; Apr 9</td><td className="py-2 pr-4">Hacking Period</td><td className="py-2">14 days to build the Solution.</td></tr>
-                  <tr><td className="py-2 pr-4 font-mono text-xs">Apr 9, 23:59 UTC</td><td className="py-2 pr-4">Submissions Due</td><td className="py-2">Hard deadline for all deliverables.</td></tr>
-                  <tr><td className="py-2 pr-4 font-mono text-xs">Apr 10 &ndash; 14</td><td className="py-2 pr-4">Judging Period</td><td className="py-2">Panel reviews all submissions.</td></tr>
-                  <tr><td className="py-2 pr-4 font-mono text-xs">Apr 15, 18:00 UTC</td><td className="py-2 pr-4">Results Announced</td><td className="py-2">Winners officially announced.</td></tr>
+                  <tr><td className="py-2 pr-4 font-mono text-xs">Mar 23, 2026</td><td className="py-2 pr-4">Registration Opens</td><td className="py-2">Website live, announcement across all channels.</td></tr>
+                  <tr><td className="py-2 pr-4 font-mono text-xs">Mar 23 &ndash; Apr 3</td><td className="py-2 pr-4">Registration Period</td><td className="py-2">12 days of sign-ups and marketing push.</td></tr>
+                  <tr><td className="py-2 pr-4 font-mono text-xs">Mar 27, 2026</td><td className="py-2 pr-4">Resources Published</td><td className="py-2">Documentation guides released.</td></tr>
+                  <tr><td className="py-2 pr-4 font-mono text-xs">Apr 3, 2026</td><td className="py-2 pr-4">Registration Closes</td><td className="py-2">Last day to sign up. Onboarding email sent.</td></tr>
+                  <tr><td className="py-2 pr-4 font-mono text-xs">Apr 6, 10:00 UTC</td><td className="py-2 pr-4">Hacking Begins</td><td className="py-2">12-day hacking period starts.</td></tr>
+                  <tr><td className="py-2 pr-4 font-mono text-xs">Apr 6 &ndash; 17</td><td className="py-2 pr-4">Hacking Period</td><td className="py-2">12 days to build the Solution.</td></tr>
+                  <tr><td className="py-2 pr-4 font-mono text-xs">Apr 17, 23:59 UTC</td><td className="py-2 pr-4">Submissions Due</td><td className="py-2">Hard deadline for all deliverables.</td></tr>
+                  <tr><td className="py-2 pr-4 font-mono text-xs">Apr 18 &ndash; 22</td><td className="py-2 pr-4">Judging Period</td><td className="py-2">Panel reviews all submissions.</td></tr>
+                  <tr><td className="py-2 pr-4 font-mono text-xs">Apr 23, 18:00 UTC</td><td className="py-2 pr-4">Results Announced</td><td className="py-2">Winners officially announced.</td></tr>
                 </tbody>
               </table>
             </div>
@@ -134,7 +134,7 @@ export default function TermsPage() {
               <li>README with: project description, architecture diagram, setup instructions, and team members.</li>
               <li>On-chain BSV transactions must be verifiable.</li>
               <li>Submissions must achieve at least 1.5 million meaningful on-chain transactions within a designated 24-hour window. Transactions must be meaningful to the application&apos;s functionality &mdash; artificial inflation of transaction counts without genuine utility will result in disqualification.</li>
-              <li>Submissions must be received by April 9, 2026 at 23:59 UTC.</li>
+              <li>Submissions must be received by April 17, 2026 at 23:59 UTC.</li>
             </ol>
 
             <h3 className="text-lg font-bold mt-8 mb-4">Disqualification Criteria</h3>
