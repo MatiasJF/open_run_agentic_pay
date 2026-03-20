@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
-import PasswordGate from '@/components/PasswordGate'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -57,7 +56,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-        <PasswordGate>{children}</PasswordGate>
+        {children}
         {/* HubSpot Tracking Code */}
         <Script
           id="hs-script-loader"
