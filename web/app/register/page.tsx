@@ -129,6 +129,12 @@ export default function RegisterPage() {
       })
     }
 
+    // Also respect any errors HubSpot has already placed (e.g. email typo suggestions)
+    const hubspotErrors = stepWrapper.querySelectorAll('.hs-error-msgs:not(.hs-stepper-error .hs-error-msgs)')
+    if (hubspotErrors.length > 0) {
+      valid = false
+    }
+
     return valid
   }, [currentStep])
 
