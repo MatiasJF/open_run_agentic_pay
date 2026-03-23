@@ -21,11 +21,12 @@ export default function RegisterPage() {
 
     let valid = true
 
-    const addError = (container: Element | null, message: string) => {
+    const addError = (container: Element | null, message: string, type?: string) => {
       if (container && !container.querySelector('.hs-stepper-error')) {
         const err = document.createElement('div')
         err.className = 'hs-stepper-error'
-        err.innerHTML = `<ul class="hs-error-msgs"><li><label class="hs-error-msg">${message}</label></li></ul>`
+        const extraClass = type === 'email' ? ' hs-email-error' : ''
+        err.innerHTML = `<ul class="hs-error-msgs"><li><label class="hs-error-msg${extraClass}">${message}</label></li></ul>`
         container.appendChild(err)
       }
     }
@@ -100,10 +101,10 @@ export default function RegisterPage() {
           addError(field.querySelector('.input'), errorMsg)
         } else if (inputType === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
           valid = false
-          errorMsg = 'Please enter a valid email address.'
+          errorMsg = '⚠ Please enter a valid email address (e.g. name@example.com)'
           field.classList.add('hs-field-invalid')
-          input.style.borderColor = '#f87171'
-          addError(field.querySelector('.input'), errorMsg)
+          input.style.borderColor = '#fbbf24'
+          addError(field.querySelector('.input'), errorMsg, 'email')
         } else {
           clearError(field)
           input.style.borderColor = ''
