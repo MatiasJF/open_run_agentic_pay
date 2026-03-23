@@ -345,9 +345,10 @@ export default function RegisterPage() {
             <svg className="w-5 h-5 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <p className="text-muted">
-              Using <strong className="text-white">Brave</strong> or an ad blocker? Please disable shields/blockers for this site to ensure the form submits correctly.
-            </p>
+            <div className="text-muted">
+              <p>Using <strong className="text-white">Brave</strong> or an ad blocker? Please disable shields/blockers for this site to ensure the form loads and submits correctly.</p>
+              <p className="mt-1">On <strong className="text-white">Safari</strong> (iOS/macOS), go to Settings &rarr; Safari &rarr; turn off <em>&ldquo;Prevent Cross-Site Tracking&rdquo;</em> to allow the form to submit.</p>
+            </div>
           </div>
         )}
 
@@ -363,7 +364,10 @@ export default function RegisterPage() {
                 Your browser or ad blocker is preventing the registration form from loading.
                 This is commonly caused by Brave Shields, uBlock Origin, or similar extensions.
               </p>
-              <p className="text-sm text-muted">Please disable your ad blocker or Brave Shields for this site and refresh the page.</p>
+              <div className="text-sm text-muted space-y-2 max-w-md mx-auto">
+                <p>Please disable your ad blocker or Brave Shields for this site and refresh the page.</p>
+                <p>On <strong className="text-white">Safari</strong> (iOS/macOS), go to Settings &rarr; Safari &rarr; turn off <em>&ldquo;Prevent Cross-Site Tracking&rdquo;</em>.</p>
+              </div>
             </div>
           )}
         </div>
