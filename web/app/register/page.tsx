@@ -89,11 +89,21 @@ export default function RegisterPage() {
       // Check text inputs and textareas
       const input = field.querySelector<HTMLInputElement | HTMLTextAreaElement>('input, textarea')
       if (input) {
-        if (!input.value || input.value.trim() === '') {
+        const value = input.value?.trim() ?? ''
+        const inputType = (input as HTMLInputElement).type
+        let errorMsg = 'Please complete this required field.'
+
+        if (!value) {
           valid = false
           field.classList.add('hs-field-invalid')
           input.style.borderColor = '#f87171'
-          addError(field.querySelector('.input'), 'Please complete this required field.')
+          addError(field.querySelector('.input'), errorMsg)
+        } else if (inputType === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+          valid = false
+          errorMsg = 'Please enter a valid email address.'
+          field.classList.add('hs-field-invalid')
+          input.style.borderColor = '#f87171'
+          addError(field.querySelector('.input'), errorMsg)
         } else {
           clearError(field)
           input.style.borderColor = ''
