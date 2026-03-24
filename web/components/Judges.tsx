@@ -20,6 +20,13 @@ export default function Judges() {
       bio: 'Developer relations leader and community builder.',
       image: '/judges/marcin.png',
     },
+    {
+      name: 'Crescenda Babiera',
+      title: 'Head of the BSV Ambassador Programme',
+      bio: 'Head of the BSV Ambassador Programme.',
+      image: '/judges/cres.jpeg',
+      linkedin: 'https://www.linkedin.com/in/cresbabiera/',
+    },
   ]
 
   return (
@@ -32,7 +39,7 @@ export default function Judges() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
           {judges.map((judge, i) => (
             <div key={i} className="glass-card rounded-xl p-6 text-center">
               <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-primary/30 to-accent/30">
@@ -44,7 +51,13 @@ export default function Judges() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-bold mb-1">{judge.name}</h3>
+              {judge.linkedin ? (
+                <a href={judge.linkedin} target="_blank" rel="noopener noreferrer" className="text-lg font-bold mb-1 hover:text-accent transition-colors">
+                  {judge.name}
+                </a>
+              ) : (
+                <h3 className="text-lg font-bold mb-1">{judge.name}</h3>
+              )}
               <div className="text-sm text-accent mb-2">{judge.title}</div>
               <p className="text-sm text-muted">{judge.bio}</p>
             </div>
