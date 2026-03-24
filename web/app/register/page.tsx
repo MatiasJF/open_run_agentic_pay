@@ -257,6 +257,17 @@ export default function RegisterPage() {
       })
     }
 
+    // Rewrite any external terms/rules links in the form to point to /terms
+    const formLinks = form.querySelectorAll<HTMLAnchorElement>('a[href]')
+    formLinks.forEach((a) => {
+      const href = a.getAttribute('href') || ''
+      if (/terms|rules|conditions/i.test(href) || /terms|rules|conditions/i.test(a.textContent || '')) {
+        a.setAttribute('href', '/terms')
+        a.setAttribute('target', '_blank')
+        a.setAttribute('rel', 'noopener noreferrer')
+      }
+    })
+
     setSectionTitles(sections.map((s) => s.title))
     setSectionCount(sections.length)
     setCurrentStep(0)
@@ -297,12 +308,30 @@ export default function RegisterPage() {
     }
     document.head.appendChild(script)
 
+    // Rewrite external terms/rules links to /terms whenever new content appears
+    const rewriteTermsLinks = (container: HTMLElement) => {
+      const links = container.querySelectorAll<HTMLAnchorElement>('a[href]')
+      links.forEach((a) => {
+        const href = a.getAttribute('href') || ''
+        if (
+          href !== '/terms' &&
+          (/terms|rules|conditions/i.test(href) || /terms|rules|conditions/i.test(a.textContent || ''))
+        ) {
+          a.setAttribute('href', '/terms')
+          a.setAttribute('target', '_blank')
+          a.setAttribute('rel', 'noopener noreferrer')
+        }
+      })
+    }
+
     // Watch for the form to be rendered
     const observer = new MutationObserver(() => {
       const form = formRef.current?.querySelector('form')
       if (form && form.children.length > 0 && !organisedRef.current) {
         setTimeout(organiseSteps, 300)
       }
+      // Continuously rewrite any terms links HubSpot injects
+      if (formRef.current) rewriteTermsLinks(formRef.current)
     })
 
     if (formRef.current) {
