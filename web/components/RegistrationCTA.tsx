@@ -30,7 +30,7 @@ export default function RegistrationCTA() {
               </a>
             </div>
             <p className="mt-6 text-base text-muted font-semibold">
-              Registration closes April 3, 2026 &middot; Hacking period April 6 &ndash; 17
+              Hacking period April 6 &ndash; 17
             </p>
             <p className="mt-3 text-sm text-accent-warm/80">
               This event is subject to a minimum number of registrations. If the required number is not met, the event may be postponed or cancelled.
