@@ -49,7 +49,7 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Contact</h4>
             <div className="space-y-2 text-sm">
-              <a href="mailto:hackathon@bsvassociation.org" className="block text-muted hover:text-white transition-colors">hackathon@bsvblockchain.org</a>
+              <a href="mailto:hackathon@bsvassociation.org" className="block text-muted hover:text-white transition-colors">hackathon@bsvassociation.org</a>
               <a href="https://discord.com/invite/2ZBPWswsV4" target="_blank" rel="noopener noreferrer" className="block text-muted hover:text-white transition-colors">Discord Server</a>
               <a href="https://x.com/BSVAssociation" target="_blank" rel="noopener noreferrer" className="block text-muted hover:text-white transition-colors">@BSVAssociation on X</a>
             </div>
