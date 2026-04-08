@@ -52,7 +52,7 @@ export default function Hero() {
         {/* Dates — bigger and bolder */}
         <div className="flex flex-wrap justify-center gap-6 mb-10 font-mono">
           <div className="glass-card rounded-lg px-6 py-4">
-            <div className="text-accent font-bold text-sm sm:text-base tracking-wide">REGISTRATION</div>
+            <div className="text-accent font-bold text-sm sm:text-base tracking-wide">REGISTRATION STARTS</div>
             <div className="text-white text-xl sm:text-2xl font-bold">Mar 23</div>
           </div>
           <div className="glass-card rounded-lg px-6 py-4">
