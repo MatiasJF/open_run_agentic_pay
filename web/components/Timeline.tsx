@@ -1,6 +1,6 @@
 export default function Timeline() {
   const events = [
-    { date: 'Mon Mar 23', label: 'Registration Opens', desc: 'Website live, announcement across all channels', active: true },
+    { date: 'Mon Mar 23', label: 'Registrations Start', desc: 'Website live, announcement across all channels', active: true },
     { date: 'Thu Mar 27', label: 'Resources Published', desc: 'Starter templates & guides released', active: false },
     // { date: 'Thu Apr 3', label: 'Registration Closes', desc: 'Last day to sign up', active: false },
     { date: 'Mon Apr 6', label: 'Hacking Begins', desc: '12 days to build your multi-agent application', highlight: true, active: false },

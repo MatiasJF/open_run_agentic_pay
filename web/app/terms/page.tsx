@@ -114,8 +114,8 @@ export default function TermsPage() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/5">
-                  <tr><td className="py-2 pr-4 font-mono text-xs">Mar 23, 2026</td><td className="py-2 pr-4">Registration Opens</td><td className="py-2">Website live, announcement across all channels.</td></tr>
-                  <tr><td className="py-2 pr-4 font-mono text-xs">Mar 23 &ndash; Apr 3</td><td className="py-2 pr-4">Registration Period</td><td className="py-2">12 days of sign-ups and marketing push.</td></tr>
+                  <tr><td className="py-2 pr-4 font-mono text-xs">Mar 23, 2026</td><td className="py-2 pr-4">Registrations Start</td><td className="py-2">Website live, announcement across all channels.</td></tr>
+                  {/* <tr><td className="py-2 pr-4 font-mono text-xs">Mar 23 &ndash; Apr 3</td><td className="py-2 pr-4">Registration Period</td><td className="py-2">12 days of sign-ups and marketing push.</td></tr> */}
                   <tr><td className="py-2 pr-4 font-mono text-xs">Mar 27, 2026</td><td className="py-2 pr-4">Resources Published</td><td className="py-2">Documentation guides released.</td></tr>
                   {/* <tr><td className="py-2 pr-4 font-mono text-xs">Apr 3, 2026</td><td className="py-2 pr-4">Registration Closes</td><td className="py-2">Last day to sign up. Onboarding email sent.</td></tr> */}
                   <tr><td className="py-2 pr-4 font-mono text-xs">Apr 6, 10:00 UTC</td><td className="py-2 pr-4">Hacking Begins</td><td className="py-2">12-day hacking period starts.</td></tr>
