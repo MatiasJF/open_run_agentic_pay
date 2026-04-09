@@ -27,6 +27,13 @@ export default function Judges() {
       image: '/judges/cres.jpeg',
       linkedin: 'https://www.linkedin.com/in/cresbabiera/',
     },
+    {
+      name: 'Darren Kellenschwiler',
+      title: 'Engineer & Entrepreneur, BSV Association',
+      bio: 'Blockchain engineer and entrepreneur building the BSV Browser.',
+      image: '/judges/deggen.png',
+      linkedin: 'https://www.linkedin.com/in/deggen/',
+    },
   ]
 
   return (
