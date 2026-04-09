@@ -46,9 +46,9 @@ export default function Judges() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
           {judges.map((judge, i) => (
-            <div key={i} className="glass-card rounded-xl p-6 text-center">
+            <div key={i} className="glass-card rounded-xl p-6 text-center w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]">
               <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-primary/30 to-accent/30">
                 <Image
                   src={judge.image}
