@@ -32,7 +32,7 @@ export default function Judges() {
       title: 'Engineer & Entrepreneur, BSV Association',
       bio: 'Blockchain engineer and entrepreneur building the BSV Browser.',
       image: '/judges/deggen.png',
-      linkedin: 'https://www.linkedin.com/in/deggen/',
+      linkedin: 'https://x.com/deggen',
     },
   ]
 
