@@ -128,7 +128,31 @@ export default function CertificatePage() {
               <div className="mt-6 grid gap-4">
                 <WalletConnect onConnected={(c) => setClient(c)} />
                 {canAct ? (
-                  <InscribeButton client={client} data={data} vcWrap={vc ?? undefined} />
+                  <InscribeButton
+                    client={client}
+                    data={data}
+                    vcWrap={vc ?? undefined}
+                    onIssued={(res) => {
+                      void fetch('/api/cert-log', {
+                        method: 'POST',
+                        headers: { 'content-type': 'application/json' },
+                        body: JSON.stringify({
+                          txid: res.txid,
+                          recipient: data.recipient,
+                          projectName: data.projectName,
+                          teamName: data.teamName,
+                          event: data.event,
+                          role: data.role,
+                          date: data.date,
+                          issuer: data.issuer,
+                          identityKey: res.metadata.issuerIdentityKey,
+                          signingPubKey: res.metadata.issuerPubKey,
+                          imageSha256: res.imageSha256,
+                          issuedAt: res.metadata.issuedAt,
+                        }),
+                      }).catch(() => {})
+                    }}
+                  />
                 ) : (
                   <p className="text-xs text-muted">Enter your name to enable inscribe.</p>
                 )}
