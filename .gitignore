@@ -12,3 +12,9 @@ web/data/
 *.py
 OPEN_RUN_BRANDING/
 .claude/
+
+# BSV wallet-toolbox auto-generated keys/state
+.server-wallet.json
+.revocation-secrets.json
+.identity-registry.json
+.credential-issuer-key.json

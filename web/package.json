@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@bsv/sdk": "^1.4.0",
+    "@bsv/simple": "^0.2.3",
+    "dotenv": "^17.4.2",
     "next": "^15.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
