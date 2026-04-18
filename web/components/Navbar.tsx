@@ -36,12 +36,12 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <Link
-              href="/register"
-              className="ml-2 px-5 py-2 bg-accent-warm hover:bg-accent-warm/80 text-white text-sm font-semibold rounded-lg transition-colors"
+            <span
+              aria-disabled="true"
+              className="ml-2 px-5 py-2 bg-accent-warm/30 text-white/60 text-sm font-semibold rounded-lg cursor-not-allowed select-none"
             >
-              Register Now
-            </Link>
+              Judging In Progress
+            </span>
           </div>
 
           {/* Mobile toggle */}
@@ -75,13 +75,12 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <Link
-              href="/register"
-              className="block mt-4 px-5 py-2 bg-accent-warm text-white text-center font-semibold rounded-lg"
-              onClick={() => setMobileOpen(false)}
+            <span
+              aria-disabled="true"
+              className="block mt-4 px-5 py-2 bg-accent-warm/30 text-white/60 text-center font-semibold rounded-lg cursor-not-allowed select-none"
             >
-              Register Now
-            </Link>
+              Judging In Progress
+            </span>
           </div>
         </div>
       )}

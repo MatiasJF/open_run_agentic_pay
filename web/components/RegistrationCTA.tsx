@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 export default function RegistrationCTA() {
   return (
     <section className="section-padding">
@@ -10,18 +8,18 @@ export default function RegistrationCTA() {
 
           <div className="relative z-10">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Ready to Build the Future?
+              Judging Window Is On
             </h2>
             <p className="text-muted text-lg mb-8 max-w-xl mx-auto">
-              Grab your favourite AI tool, join builders worldwide, and create the first generation of autonomous AI agent payment systems.
+              Our judges are reviewing the autonomous AI agent payment systems built by participants. Winners will be announced on April 23.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href="/register"
-                className="px-8 py-4 bg-accent-warm hover:bg-accent-warm/80 text-white font-bold rounded-lg text-lg transition-all glow-magenta hover:scale-105"
+              <span
+                aria-disabled="true"
+                className="px-8 py-4 bg-accent-warm/30 text-white/60 font-bold rounded-lg text-lg cursor-not-allowed select-none"
               >
-                Register Now
-              </Link>
+                Registration Closed
+              </span>
               <a
                 href="/resources"
                 className="px-8 py-4 border border-accent/30 hover:border-accent/60 text-white font-semibold rounded-lg text-lg transition-all hover:bg-accent/5"
@@ -30,10 +28,7 @@ export default function RegistrationCTA() {
               </a>
             </div>
             <p className="mt-6 text-base text-muted font-semibold">
-              Hacking period April 6 &ndash; 17
-            </p>
-            <p className="mt-3 text-sm text-accent-warm/80">
-              This event is subject to a minimum number of registrations. If the required number is not met, the event may be postponed or cancelled.
+              Results announced April 23
             </p>
           </div>
         </div>

@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Image from 'next/image'
 
 export default function Hero() {
@@ -52,12 +51,12 @@ export default function Hero() {
         {/* Dates — bigger and bolder */}
         <div className="flex flex-wrap justify-center gap-6 mb-10 font-mono">
           <div className="glass-card rounded-lg px-6 py-4">
-            <div className="text-accent font-bold text-sm sm:text-base tracking-wide">REGISTRATION STARTS</div>
-            <div className="text-white text-xl sm:text-2xl font-bold">Mar 23</div>
-          </div>
-          <div className="glass-card rounded-lg px-6 py-4">
             <div className="text-accent font-bold text-sm sm:text-base tracking-wide">HACKATHON</div>
             <div className="text-white text-xl sm:text-2xl font-bold">Apr 6 &ndash; 17</div>
+          </div>
+          <div className="glass-card rounded-lg px-6 py-4 border-accent-warm/40">
+            <div className="text-accent-warm font-bold text-sm sm:text-base tracking-wide">JUDGING WINDOW</div>
+            <div className="text-white text-xl sm:text-2xl font-bold">Until Apr 23</div>
           </div>
           <div className="glass-card rounded-lg px-6 py-4">
             <div className="text-accent font-bold text-sm sm:text-base tracking-wide">RESULTS</div>
@@ -67,12 +66,12 @@ export default function Hero() {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            href="/register"
-            className="px-8 py-3.5 bg-accent-warm hover:bg-accent-warm/80 text-white font-bold rounded-lg text-lg transition-all glow-magenta hover:scale-105"
+          <span
+            aria-disabled="true"
+            className="px-8 py-3.5 bg-accent-warm/30 text-white/60 font-bold rounded-lg text-lg cursor-not-allowed select-none"
           >
-            Register Now
-          </Link>
+            Registration Closed
+          </span>
           <a
             href="#challenge"
             className="px-8 py-3.5 border border-accent/30 hover:border-accent/60 text-white font-semibold rounded-lg text-lg transition-all hover:bg-accent/5"
@@ -81,10 +80,10 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Minimum registration notice */}
-        <div className="mt-10 inline-block px-4 py-2 rounded-lg border border-accent-warm/20 bg-accent-warm/5">
-          <p className="text-sm text-accent-warm/80">
-            This event is subject to a minimum number of registrations. If the required number is not met, the event may be postponed or cancelled.
+        {/* Judging window notice */}
+        <div className="mt-10 inline-block px-4 py-2 rounded-lg border border-accent-warm/30 bg-accent-warm/5">
+          <p className="text-sm text-accent-warm">
+            Judging window is on — winners announced Apr 23.
           </p>
         </div>
 
