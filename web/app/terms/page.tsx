@@ -239,8 +239,8 @@ export default function TermsPage() {
         </div>
 
         <div className="mt-8 text-center">
-          <Link href="/register" className="inline-block px-6 py-3 bg-accent-warm hover:bg-accent-warm/80 text-white font-semibold rounded-lg transition-colors">
-            Register Now
+          <Link href="/" className="inline-block px-6 py-3 border border-accent/30 hover:border-accent/60 text-white font-semibold rounded-lg transition-all hover:bg-accent/5">
+            Back to Home
           </Link>
         </div>
       </div>
