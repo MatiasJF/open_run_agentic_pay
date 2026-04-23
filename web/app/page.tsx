@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
+import Winners from '@/components/Winners'
 import Prizes from '@/components/Prizes'
 import Challenge from '@/components/Challenge'
 import TechStack from '@/components/TechStack'
@@ -16,6 +17,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <Winners />
         <Prizes />
         <Challenge />
         <TechStack />

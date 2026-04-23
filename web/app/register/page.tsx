@@ -16,27 +16,27 @@ export default function RegisterPage() {
             </svg>
           </div>
 
-          <h1 className="text-3xl font-bold mb-3">Judging Window Is On</h1>
+          <h1 className="text-3xl font-bold mb-3">Winners Announced</h1>
           <p className="text-muted mb-6">
-            Registration for Open Run Agentic Pay has closed. Our judges are now reviewing projects, with winners announced on April 23.
+            Open Run Agentic Pay has wrapped. Congratulations to all winners — see the full list on the homepage.
           </p>
 
           <p className="text-sm text-accent-warm mb-8">
-            Follow along for the results.
+            Thank you to every builder who shipped.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
-              href="/"
+              href="/#winners"
               className="w-full sm:w-auto px-6 py-3 bg-accent-warm hover:bg-accent-warm/80 text-white font-semibold rounded-lg transition-colors"
             >
-              Back to Home
+              See Winners
             </Link>
             <Link
-              href="/resources"
+              href="/"
               className="w-full sm:w-auto px-6 py-3 border border-accent/30 hover:border-accent/60 text-white font-semibold rounded-lg transition-all hover:bg-accent/5"
             >
-              View Resources
+              Back to Home
             </Link>
           </div>
         </div>

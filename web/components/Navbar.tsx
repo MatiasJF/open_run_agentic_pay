@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const navLinks = [
+  { href: '#winners', label: 'Winners' },
   { href: '#prizes', label: 'Prizes' },
   { href: '#challenge', label: 'Challenge' },
   { href: '#techstack', label: 'Tech Stack' },
@@ -36,12 +37,12 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <span
-              aria-disabled="true"
-              className="ml-2 px-5 py-2 bg-accent-warm/30 text-white/60 text-sm font-semibold rounded-lg cursor-not-allowed select-none"
+            <a
+              href="#winners"
+              className="ml-2 px-5 py-2 bg-accent-warm hover:bg-accent-warm/80 text-white text-sm font-semibold rounded-lg transition-colors"
             >
-              Judging In Progress
-            </span>
+              See Winners
+            </a>
           </div>
 
           {/* Mobile toggle */}
@@ -75,12 +76,13 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <span
-              aria-disabled="true"
-              className="block mt-4 px-5 py-2 bg-accent-warm/30 text-white/60 text-center font-semibold rounded-lg cursor-not-allowed select-none"
+            <a
+              href="#winners"
+              className="block mt-4 px-5 py-2 bg-accent-warm hover:bg-accent-warm/80 text-white text-center font-semibold rounded-lg transition-colors"
+              onClick={() => setMobileOpen(false)}
             >
-              Judging In Progress
-            </span>
+              See Winners
+            </a>
           </div>
         </div>
       )}

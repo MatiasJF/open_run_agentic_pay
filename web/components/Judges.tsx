@@ -42,7 +42,7 @@ export default function Judges() {
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Judges</h2>
           <p className="text-muted text-lg">
-            Our panel of expert judges evaluating your projects.
+            The panel that reviewed every submission. Thank you.
           </p>
         </div>
 

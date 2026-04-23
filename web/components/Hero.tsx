@@ -54,24 +54,24 @@ export default function Hero() {
             <div className="text-accent font-bold text-sm sm:text-base tracking-wide">HACKATHON</div>
             <div className="text-white text-xl sm:text-2xl font-bold">Apr 6 &ndash; 17</div>
           </div>
-          <div className="glass-card rounded-lg px-6 py-4 border-accent-warm/40">
-            <div className="text-accent-warm font-bold text-sm sm:text-base tracking-wide">JUDGING WINDOW</div>
-            <div className="text-white text-xl sm:text-2xl font-bold">Until Apr 23</div>
-          </div>
           <div className="glass-card rounded-lg px-6 py-4">
-            <div className="text-accent font-bold text-sm sm:text-base tracking-wide">RESULTS</div>
-            <div className="text-white text-xl sm:text-2xl font-bold">Apr 23</div>
+            <div className="text-accent font-bold text-sm sm:text-base tracking-wide">JUDGING</div>
+            <div className="text-white text-xl sm:text-2xl font-bold">Apr 17 &ndash; 23</div>
+          </div>
+          <div className="glass-card rounded-lg px-6 py-4 border-accent-warm/40">
+            <div className="text-accent-warm font-bold text-sm sm:text-base tracking-wide">RESULTS</div>
+            <div className="text-white text-xl sm:text-2xl font-bold">Apr 23 ✓</div>
           </div>
         </div>
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <span
-            aria-disabled="true"
-            className="px-8 py-3.5 bg-accent-warm/30 text-white/60 font-bold rounded-lg text-lg cursor-not-allowed select-none"
+          <a
+            href="#winners"
+            className="px-8 py-3.5 bg-accent-warm hover:bg-accent-warm/80 text-white font-bold rounded-lg text-lg transition-colors"
           >
-            Registration Closed
-          </span>
+            See Winners
+          </a>
           <a
             href="#challenge"
             className="px-8 py-3.5 border border-accent/30 hover:border-accent/60 text-white font-semibold rounded-lg text-lg transition-all hover:bg-accent/5"
@@ -80,10 +80,10 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Judging window notice */}
+        {/* Winners notice */}
         <div className="mt-10 inline-block px-4 py-2 rounded-lg border border-accent-warm/30 bg-accent-warm/5">
           <p className="text-sm text-accent-warm">
-            Judging window is on — winners announced Apr 23.
+            Winners announced — congratulations to all builders.
           </p>
         </div>
 
